@@ -477,10 +477,10 @@
         <button class="pin" style="--x:31%; --y:22%" data-projekt="pr-5" aria-label="Projekt 5: Oddechová zóna Na Výslunní">5</button>
         <button class="pin" style="--x:36%; --y:52%" data-projekt="pr-6" aria-label="Projekt 6: Sportovní areál a tenisový kurt">6</button>
 
-        <button class="pin pin--hrivno" style="--x:73%; --y:63%" data-projekt="pr-7" aria-label="Projekt 7: Hřivenský plácek">7</button>
-        <button class="pin pin--hrivno" style="--x:83%; --y:70%" data-projekt="pr-8" aria-label="Projekt 8: Komunitní centrum Hřivno">8</button>
-        <button class="pin pin--hrivno" style="--x:69%; --y:78%" data-projekt="pr-9" aria-label="Projekt 9: Obnova chodníků ve Hřivně">9</button>
-        <button class="pin pin--hrivno" style="--x:92%; --y:88%" data-projekt="pr-10" aria-label="Projekt 10: Rekonstrukce silnice Hřivno – Zdětín">10</button>
+        <button class="pin pin--hrivno" style="--x:74%; --y:60%" data-projekt="pr-7" aria-label="Projekt 7: Hřivenský plácek">7</button>
+        <button class="pin pin--hrivno" style="--x:85%; --y:66%" data-projekt="pr-8" aria-label="Projekt 8: Komunitní centrum Hřivno">8</button>
+        <button class="pin pin--hrivno" style="--x:69%; --y:74%" data-projekt="pr-9" aria-label="Projekt 9: Obnova chodníků ve Hřivně">9</button>
+        <button class="pin pin--hrivno" style="--x:88%; --y:80%" data-projekt="pr-10" aria-label="Projekt 10: Rekonstrukce silnice Hřivno – Zdětín">10</button>
       </div>
 
       <ul class="mapa__seznam" id="seznam-projektu">
@@ -735,6 +735,16 @@
 
     </div>
 
+    <p style="text-align:center; margin-top:48px;" class="nabihat">
+      <a class="tlacitko tlacitko--modre" href="kandidati.html">
+        Podrobné profily kandidátů
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </p>
+
   </div>
 </section>
 
@@ -795,11 +805,85 @@
     </p>
 
     <div class="hero__tlacitka nabihat" style="margin-bottom:0;">
-      <a class="tlacitko tlacitko--cervene" href="program.html">Přečíst celý program</a>
+      <a class="tlacitko tlacitko--cervene" href="jak-volit.html">Jak správně volit</a>
       <a class="tlacitko tlacitko--obrys" href="dokumenty/volebni-program-2026.pdf" download>
         Stáhnout brožuru (PDF)
       </a>
     </div>
+
+  </div>
+</section>
+
+<!-- ============================================================= Kontakt -->
+<section class="sekce sekce--seda" id="kontakt">
+  <div class="obal">
+
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">Ozvěte se nám</span>
+      <h2>Máte dotaz nebo nápad?</h2>
+      <div class="podtrzeni"></div>
+      <p>
+        Ptejte se na cokoliv z programu i mimo něj. Odpovídáme každému —
+        a co nevíme, zjistíme.
+      </p>
+    </div>
+
+    <!-- ==================================================================
+         KONTAKTNÍ ÚDAJE K DOPLNĚNÍ
+
+         Nahraďte texty s třídou "chybi" skutečnými údaji a u odkazů
+         opravte i atribut href:
+           e-mail   → href="mailto:vas@email.cz"
+           telefon  → href="tel:+420123456789"
+           Facebook → href="https://www.facebook.com/vase-stranka"
+
+         Pokud některý kanál nechcete používat, celou kartu smažte.
+         ================================================================== -->
+
+    <div class="kontakty">
+
+      <div class="kontakt-karta nabihat">
+        <div class="kontakt-karta__ikona" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#002A7D" stroke-width="2"/>
+            <path d="M3.5 6.5l8.5 6 8.5-6" stroke="#002A7D" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Napište nám</h3>
+        <p>Odpovíme obvykle do dvou dnů.</p>
+        <a href="#" class="chybi">Doplníme e-mailovou adresu</a>
+      </div>
+
+      <div class="kontakt-karta nabihat">
+        <div class="kontakt-karta__ikona" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 4h3.5l1.8 4.4-2.2 1.6a11.5 11.5 0 005.9 5.9l1.6-2.2 4.4 1.8V19a1.6 1.6 0 01-1.8 1.6C9.9 19.8 4.2 14.1 3.4 5.8A1.6 1.6 0 015 4z"
+                  stroke="#002A7D" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Zavolejte</h3>
+        <p>Raději si promluvíte? Ozvěte se.</p>
+        <a href="#" class="chybi">Doplníme telefonní číslo</a>
+      </div>
+
+      <div class="kontakt-karta nabihat">
+        <div class="kontakt-karta__ikona" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M14 8.5V7c0-.8.5-1.2 1.2-1.2H17V3h-2.4C12.4 3 11 4.5 11 6.7v1.8H9V12h2v9h3v-9h2.3l.5-3.5H14z"
+                  stroke="#002A7D" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Sledujte nás</h3>
+        <p>Novinky a pozvánky na setkání.</p>
+        <a href="#" class="chybi">Doplníme odkaz na Facebook</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;" class="nabihat">
+      Osobně se potkáme <strong>11. září ve Hřivně</strong> a <strong>12. září v Chotětově</strong> —
+      podrobnosti najdete <a href="#setkani">v sekci setkání</a>.
+    </p>
 
   </div>
 </section>
@@ -823,10 +907,10 @@
         <h4>Obsah</h4>
         <ul>
           <li><a href="#vysledky">Co jsme udělali</a></li>
-          <li><a href="#lidri">Slovo lídrů</a></li>
           <li><a href="program.html">Celý program</a></li>
-          <li><a href="#kandidati">Kandidáti</a></li>
-          <li><a href="#setkani">Setkání s občany</a></li>
+          <li><a href="kandidati.html">Kandidáti</a></li>
+          <li><a href="jak-volit.html">Jak volit</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </div>
 

@@ -255,6 +255,41 @@
     priVstupuDoOkna(prvky, 40, spustit);
   })();
 
+  /* ------------------------------------------------------ Mapa projektů */
+  (function mapa() {
+    var schema = document.querySelector(".mapa__schema");
+    var seznam = document.getElementById("seznam-projektu");
+    if (!schema || !seznam) return;
+
+    var spendliky = Array.prototype.slice.call(schema.querySelectorAll(".pin"));
+
+    function zvyraznit(id) {
+      spendliky.forEach(function (p) {
+        p.classList.toggle("je-aktivni", p.dataset.projekt === id);
+      });
+      seznam.querySelectorAll("li").forEach(function (li) {
+        li.classList.toggle("je-aktivni", li.id === id);
+      });
+    }
+
+    schema.addEventListener("click", function (e) {
+      var pin = e.target.closest(".pin");
+      if (pin) zvyraznit(pin.dataset.projekt);
+    });
+
+    // Najetí myší zvýrazní bez nutnosti klikat
+    spendliky.forEach(function (p) {
+      p.addEventListener("mouseenter", function () { zvyraznit(p.dataset.projekt); });
+      p.addEventListener("focus", function () { zvyraznit(p.dataset.projekt); });
+    });
+
+    // Projetí seznamu funguje i opačným směrem
+    seznam.addEventListener("mouseover", function (e) {
+      var li = e.target.closest("li");
+      if (li && li.id) zvyraznit(li.id);
+    });
+  })();
+
   /* -------------------------------------- Přepínač kandidátních listin */
   (function zalozky() {
     var prepinac = document.querySelector(".prepinac");
