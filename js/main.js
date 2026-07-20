@@ -307,4 +307,73 @@
     prepnout(prepinac.querySelector('[aria-selected="true"]') || tlacitka[0]);
   })();
 
+  /* ----------------------- Podrobný program: detail přes celou šířku ----
+     Na stránce programu jsou body plánu jako rozklikávací <details>. Ve
+     dvousloupcovém bloku (Realizováno | Plán) by se rozbalený detail mačkal
+     do poloviny šířky. Proto obsah každého detailu přesuneme do panelu pod
+     oběma sloupci, kde má celou šířku, a summary necháme fungovat jako
+     přepínač (naráz je otevřený jen jeden bod v bloku).
+
+     Bez JavaScriptu zůstanou <details> plně funkční na svém místě. */
+  (function programDetaily() {
+    var bloky = Array.prototype.slice.call(document.querySelectorAll(".blok"));
+    if (!bloky.length) return;
+
+    var uzkyDisplej = window.matchMedia("(max-width: 980px)");
+
+    bloky.forEach(function (blok) {
+      var plan = blok.querySelector(".sloupec--plan");
+      if (!plan) return;
+
+      var detaily = Array.prototype.slice.call(
+        plan.querySelectorAll("li.bod > details.detail")
+      );
+      if (!detaily.length) return;
+
+      var panel = document.createElement("div");
+      panel.className = "blok__detaily";
+      blok.appendChild(panel);
+
+      var polozky = detaily.map(function (det, i) {
+        var summary = det.querySelector("summary");
+        var obsah = det.querySelector(".detail__obsah");
+        var id = (blok.id || "blok") + "-detail-" + i;
+
+        // Obsah přesuneme do panelu na celou šířku
+        obsah.id = id;
+        obsah.hidden = true;
+        panel.appendChild(obsah);
+
+        summary.setAttribute("role", "button");
+        summary.setAttribute("aria-expanded", "false");
+        summary.setAttribute("aria-controls", id);
+
+        return { det: det, summary: summary, obsah: obsah };
+      });
+
+      // Naráz otevřený jen jeden bod; cíl === null vše zavře
+      function nastavit(cil) {
+        polozky.forEach(function (p) {
+          var je = p === cil;
+          p.det.open = je;
+          p.summary.setAttribute("aria-expanded", String(je));
+          p.obsah.hidden = !je;
+        });
+      }
+
+      polozky.forEach(function (p) {
+        p.summary.addEventListener("click", function (e) {
+          e.preventDefault();  // potlačíme nativní otevírání <details>
+          var otevrit = p.obsah.hidden;
+          nastavit(otevrit ? p : null);
+
+          // Na mobilu je panel až pod celým blokem — po otevření k němu sjedeme
+          if (otevrit && uzkyDisplej.matches) {
+            p.obsah.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        });
+      });
+    });
+  })();
+
 })();
