@@ -15,7 +15,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<!-- Značka ?v=... za odkazy na CSS a JS zajišťuje, že po úpravě uvidí
+     návštěvníci novou verzi místo staré z mezipaměti. Nepřepisujte ji ručně —
+     před nahráním webu spusťte `python verze.py`, viz README.md. -->
+<link rel="stylesheet" href="css/style.css?v=2026-07-20-2215">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
 <!-- Náběhové animace se zapnou jen tam, kde je JavaScript k dispozici -->
@@ -49,7 +52,7 @@
     <nav class="menu" id="menu" aria-label="Hlavní navigace">
       <a href="#vysledky">Co jsme udělali</a>
       <a href="#program">Program</a>
-      <a href="#projekty">Projekty</a>
+      <a href="mapa.html">Mapa projektů</a>
       <a href="#kandidati">Kandidáti</a>
       <a href="jak-volit.html">Jak volit</a>
       <a href="#kontakt">Kontakt</a>
@@ -427,79 +430,26 @@
 
 <!-- ====================================================== Mapa projektů -->
 <section class="sekce" id="projekty">
-  <div class="obal">
+  <div class="obal obal--uzky" style="text-align:center;">
 
     <div class="hlavicka-sekce nabihat">
       <span class="stitek">Kde se co změní</span>
       <h2>Mapa plánovaných projektů</h2>
       <div class="podtrzeni"></div>
-      <p>Obě obce, ne jen jedna. Klikněte na špendlík a uvidíte, o co jde.</p>
+      <p>
+        Projekty v Chotětově i ve Hřivně zanesené do mapy — u každého uvidíte,
+        kde přesně vznikne a na co navazuje.
+      </p>
     </div>
 
-    <div class="mapa nabihat">
-
-      <!-- Schéma obou obcí. Polohy špendlíků se nastavují proměnnými --x a --y
-           přímo v atributu style — stačí změnit procenta. -->
-      <div class="mapa__schema">
-        <svg viewBox="0 0 600 420" aria-label="Orientační schéma Chotětova a Hřivna" role="img">
-          <rect width="600" height="420" fill="#F5F7FA"/>
-
-          <!-- Pole a zeleň -->
-          <path d="M0 250 Q150 210 300 245 T600 235 L600 420 L0 420 Z" fill="#EAF0E8"/>
-          <path d="M0 60 Q120 40 250 70 T600 55 L600 0 L0 0 Z" fill="#EDF1F6"/>
-
-          <!-- Hlavní silnice mezi obcemi -->
-          <path d="M120 150 C220 150 300 250 470 285" stroke="#C9D2DE"
-                stroke-width="18" fill="none" stroke-linecap="round"/>
-          <path d="M120 150 C220 150 300 250 470 285" stroke="#fff"
-                stroke-width="3" fill="none" stroke-dasharray="10 12"/>
-
-          <!-- Silnice na Zdětín -->
-          <path d="M470 285 C520 300 550 340 560 390" stroke="#C9D2DE"
-                stroke-width="13" fill="none" stroke-linecap="round"/>
-
-          <!-- Zastavěné plochy -->
-          <circle cx="140" cy="150" r="96" fill="#DCE5F2" opacity=".75"/>
-          <circle cx="470" cy="288" r="72" fill="#DCE5F2" opacity=".6"/>
-
-          <text x="140" y="52" text-anchor="middle" font-family="Poppins, sans-serif"
-                font-weight="700" font-size="21" fill="#002A7D">CHOTĚTOV</text>
-          <text x="470" y="382" text-anchor="middle" font-family="Poppins, sans-serif"
-                font-weight="700" font-size="19" fill="#3D5FA8">HŘIVNO</text>
-          <text x="565" y="408" text-anchor="end" font-family="Lato, sans-serif"
-                font-size="13" fill="#8A93A3">→ Zdětín</text>
+    <p class="nabihat" style="margin:0;">
+      <a class="tlacitko tlacitko--modre" href="mapa.html">
+        Otevřít mapu projektů
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-
-        <button class="pin" style="--x:14%; --y:26%" data-projekt="pr-1" aria-label="Projekt 1: Cyklostezka na místě bývalé vlečky">1</button>
-        <button class="pin" style="--x:9%;  --y:47%" data-projekt="pr-2" aria-label="Projekt 2: Cyklostezka Chotětov – Bezno">2</button>
-        <button class="pin" style="--x:27%; --y:40%" data-projekt="pr-3" aria-label="Projekt 3: Tělocvična u ZŠ Chotětov">3</button>
-        <button class="pin" style="--x:20%; --y:56%" data-projekt="pr-4" aria-label="Projekt 4: Společenské centrum č. p. 51">4</button>
-        <button class="pin" style="--x:31%; --y:22%" data-projekt="pr-5" aria-label="Projekt 5: Oddechová zóna Na Výslunní">5</button>
-        <button class="pin" style="--x:36%; --y:52%" data-projekt="pr-6" aria-label="Projekt 6: Sportovní areál a tenisový kurt">6</button>
-
-        <button class="pin pin--hrivno" style="--x:74%; --y:60%" data-projekt="pr-7" aria-label="Projekt 7: Hřivenský plácek">7</button>
-        <button class="pin pin--hrivno" style="--x:85%; --y:66%" data-projekt="pr-8" aria-label="Projekt 8: Komunitní centrum Hřivno">8</button>
-        <button class="pin pin--hrivno" style="--x:69%; --y:74%" data-projekt="pr-9" aria-label="Projekt 9: Obnova chodníků ve Hřivně">9</button>
-        <button class="pin pin--hrivno" style="--x:88%; --y:80%" data-projekt="pr-10" aria-label="Projekt 10: Rekonstrukce silnice Hřivno – Zdětín">10</button>
-      </div>
-
-      <ul class="mapa__seznam" id="seznam-projektu">
-        <li id="pr-1"><span class="mapa__cislo">1</span><span><span class="mapa__nazev">Cyklostezka na místě bývalé cukrovarnické vlečky</span><span class="mapa__obec">Chotětov · stavební povolení už máme</span></span></li>
-        <li id="pr-2"><span class="mapa__cislo">2</span><span><span class="mapa__nazev">Cyklostezka Chotětov – Bezno</span><span class="mapa__obec">Chotětov · navázání na rozpracovaný projekt</span></span></li>
-        <li id="pr-3"><span class="mapa__cislo">3</span><span><span class="mapa__nazev">Tělocvična u ZŠ Chotětov</span><span class="mapa__obec">Chotětov · projektová dokumentace hotová</span></span></li>
-        <li id="pr-4"><span class="mapa__cislo">4</span><span><span class="mapa__nazev">Společenské centrum v budově č. p. 51</span><span class="mapa__obec">Chotětov · Husovo náměstí</span></span></li>
-        <li id="pr-5"><span class="mapa__cislo">5</span><span><span class="mapa__nazev">Oddechová zóna Na Výslunní</span><span class="mapa__obec">Chotětov</span></span></li>
-        <li id="pr-6"><span class="mapa__cislo">6</span><span><span class="mapa__nazev">Workoutové prvky, tenisový kurt a hřiště</span><span class="mapa__obec">Chotětov · sportovní areál</span></span></li>
-        <li id="pr-7"><span class="mapa__cislo mapa__cislo--hrivno">7</span><span><span class="mapa__nazev">Hřivenský plácek</span><span class="mapa__obec">Hřivno · víceúčelové a dětské hřiště, zázemí s WC</span></span></li>
-        <li id="pr-8"><span class="mapa__cislo mapa__cislo--hrivno">8</span><span><span class="mapa__nazev">Komunitní a společenské centrum</span><span class="mapa__obec">Hřivno · vedle budovy č. p. 15</span></span></li>
-        <li id="pr-9"><span class="mapa__cislo mapa__cislo--hrivno">9</span><span><span class="mapa__nazev">Obnova a oprava chodníků po etapách</span><span class="mapa__obec">Hřivno · projektová dokumentace hotová</span></span></li>
-        <li id="pr-10"><span class="mapa__cislo mapa__cislo--hrivno">10</span><span><span class="mapa__nazev">Rekonstrukce silnice III/27216</span><span class="mapa__obec">Hřivno – Zdětín · jednáme s krajem</span></span></li>
-      </ul>
-
-    </div>
-
-    <p class="mapa__poznamka nabihat">
-      Schéma slouží jen k orientaci — nejde o přesnou mapu a polohy špendlíků jsou přibližné.
+      </a>
     </p>
 
   </div>
@@ -908,6 +858,7 @@
         <ul>
           <li><a href="#vysledky">Co jsme udělali</a></li>
           <li><a href="program.html">Celý program</a></li>
+          <li><a href="mapa.html">Mapa projektů</a></li>
           <li><a href="kandidati.html">Kandidáti</a></li>
           <li><a href="jak-volit.html">Jak volit</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
@@ -930,6 +881,6 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2026-07-20-2215"></script>
 </body>
 </html>

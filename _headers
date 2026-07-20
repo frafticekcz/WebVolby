@@ -1,0 +1,19 @@
+# Cache hlavičky pro Cloudflare Pages / Netlify
+# (GitHub Pages tento soubor ignoruje — funguje až po přesunu na jeden z nich)
+#
+# no-cache neznamená „vůbec necachovat", ale „ulož, ale před každým použitím
+# se serveru zeptej, jestli není novější verze". Prohlížeč tak vždy dostane
+# aktuální obsah, a když se nic nezměnilo, server odpoví krátkým „beze změny"
+# a soubor se znovu nestahuje. Díky tomu nemusíš řešit ?v= ani verze.py.
+
+/*
+  Cache-Control: no-cache
+
+# Obrázky, PDF a mapová knihovna se mění zřídka — ať se klidně cachují déle.
+# Pokud přehodíš fotku kandidáta pod stejným názvem, projeví se do jednoho dne.
+/img/*
+  Cache-Control: public, max-age=86400
+/dokumenty/*
+  Cache-Control: public, max-age=86400
+/js/leaflet/*
+  Cache-Control: public, max-age=604800

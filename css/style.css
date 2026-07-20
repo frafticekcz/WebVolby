@@ -1590,44 +1590,82 @@ p:last-child { margin-bottom: 0; }
    ========================================================================== */
 .mapa {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   gap: 28px;
   align-items: start;
 }
 
-.mapa__schema {
-  position: relative;
-  background: #fff;
-  border: 1px solid var(--seda-linka);
+/* Plocha mapy musí mít pevnou výšku, jinak ji Leaflet nevykreslí */
+#mapa-plocha {
+  height: 560px;
   border-radius: var(--radius-velky);
+  border: 1px solid var(--seda-linka);
   box-shadow: var(--stin-jemny);
-  padding: 10px;
-  overflow: hidden;
+  z-index: 1;
 }
-.mapa__schema svg { width: 100%; height: auto; display: block; }
-
-/* Špendlík – pozice se nastavuje inline přes --x a --y v procentech */
-.pin {
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
+/* Špendlík projektu vykreslovaný do mapy */
+.pin-mapa {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 2.5px solid #fff;
   background: var(--modra);
   color: #fff;
   font-family: var(--font-nadpis);
   font-weight: 700;
-  font-size: .82rem;
-  cursor: pointer;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, .28);
+  font-size: .85rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .32);
   transition: transform var(--prechod), background-color var(--prechod);
 }
-.pin:hover,
-.pin.je-aktivni { background: var(--cervena); transform: translate(-50%, -50%) scale(1.22); }
-.pin--hrivno { background: var(--modra-svetla); }
+.pin-mapa--hrivno { background: var(--modra-svetla); }
+.leaflet-marker-icon:hover .pin-mapa { background: var(--cervena); transform: scale(1.15); }
+
+/* Popisek obce jako orientační bod */
+.obec-znacka span {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--modra);
+  text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 8px #fff;
+  pointer-events: none;
+}
+
+/* Vzhled bublin Leafletu sladěný se zbytkem webu */
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius);
+  box-shadow: var(--stin);
+}
+.leaflet-popup-content {
+  font-family: var(--font-text);
+  font-size: .93rem;
+  line-height: 1.5;
+  margin: 14px 16px;
+  /* Dlouhé názvy projektů se musí zalomit, ne rozšířit bublinu */
+  overflow-wrap: anywhere;
+}
+.leaflet-popup-content strong { font-family: var(--font-nadpis); color: var(--modra); }
+.leaflet-container { font-family: var(--font-text); }
+
+/* Ovládací pruh nad mapou */
+.mapa__ovladani {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+/* Projekt, kterému zatím chybí souřadnice */
+.mapa__seznam li.bez-polohy { opacity: .72; }
+.mapa__seznam li.bez-polohy .mapa__cislo { background: var(--seda-text); }
 
 .mapa__poznamka {
   font-size: .86rem;
@@ -1636,7 +1674,13 @@ p:last-child { margin-bottom: 0; }
   margin-top: 12px;
 }
 
-.mapa__seznam { list-style: none; margin: 0; padding: 0; }
+.mapa__seznam {
+  list-style: none;
+  margin: 0;
+  padding: 0 6px 0 0;
+  max-height: 560px;
+  overflow-y: auto;
+}
 .mapa__seznam li {
   display: flex;
   gap: 14px;
@@ -1644,8 +1688,10 @@ p:last-child { margin-bottom: 0; }
   padding: 13px 16px;
   border-radius: var(--radius);
   border: 1px solid transparent;
+  cursor: pointer;
   transition: background-color var(--prechod), border-color var(--prechod);
 }
+.mapa__seznam li:hover { background: #fff; border-color: var(--seda-linka); }
 .mapa__seznam li.je-aktivni {
   background: #fff;
   border-color: var(--cervena);
@@ -1801,6 +1847,8 @@ p:last-child { margin-bottom: 0; }
   .zpusoby         { grid-template-columns: 1fr; }
   .mapa            { grid-template-columns: 1fr; }
   .kontakty        { grid-template-columns: 1fr; }
+  #mapa-plocha     { height: 420px; }
+  .mapa__seznam    { max-height: none; }
 }
 
 @media (max-width: 860px) {

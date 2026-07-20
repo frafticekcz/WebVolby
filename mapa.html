@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa projektů — SPOLU pro Chotětov, Hřivno a ODS</title>
+<meta name="description" content="Kde přesně v Chotětově a ve Hřivně plánujeme jednotlivé projekty pro období 2026–2030.">
+<meta name="theme-color" content="#002A7D">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mapa projektů — SPOLU pro Chotětov, Hřivno a ODS">
+<meta property="og:description" content="Kde přesně v obou obcích plánujeme jednotlivé projekty.">
+<meta property="og:locale" content="cs_CZ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Knihovna mapy je uložená přímo v projektu, ne načítaná z cizího CDN -->
+<link rel="stylesheet" href="js/leaflet/leaflet.css">
+<!-- Číslo za ?v= po každé úpravě CSS nebo JS zvyšte — viz komentář v index.html -->
+<link rel="stylesheet" href="css/style.css?v=2026-07-20-2215">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+<!-- Náběhové animace se zapnou jen tam, kde je JavaScript k dispozici -->
+<script>document.documentElement.className += " js";</script>
+</head>
+
+<body>
+<a class="preskocit" href="#obsah">Přeskočit na obsah</a>
+
+<!-- ============================================================ Navigace -->
+<header class="hlavicka" id="hlavicka">
+  <div class="hlavicka__obal">
+
+    <a class="logo" href="index.html" aria-label="SPOLU pro Chotětov, Hřivno a ODS – domovská stránka">
+      <svg class="logo__znak" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="6" y="6" width="88" height="88" rx="10" fill="none" stroke="#002A7D" stroke-width="10"/>
+        <path d="M25 52l17 19 35-42" stroke="#CF0000" stroke-width="13" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="logo__text">SPO<span>LU</span></span>
+        <span class="logo__pod">Chotětov &amp; Hřivno 2026</span>
+      </span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Otevřít menu"
+            aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="menu" id="menu" aria-label="Hlavní navigace">
+      <a href="index.html#vysledky">Co jsme udělali</a>
+      <a href="program.html">Program</a>
+      <a href="mapa.html" class="je-aktivni" aria-current="page">Mapa projektů</a>
+      <a href="kandidati.html">Kandidáti</a>
+      <a href="jak-volit.html">Jak volit</a>
+      <a class="tlacitko tlacitko--cervene menu__cta" href="jak-volit.html">Jdu volit</a>
+    </nav>
+
+    <div class="ukazatel" id="ukazatel" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="obsah">
+
+<!-- ========================================================= Podhlavička -->
+<section class="podhlavicka">
+  <div class="obal">
+    <nav class="drobecky" aria-label="Drobečková navigace">
+      <a href="index.html">Úvod</a> &nbsp;/&nbsp; Mapa projektů
+    </nav>
+    <h1>Kde se co změní</h1>
+    <p>
+      Obě obce, ne jen jedna. Klikněte na špendlík v mapě nebo na položku
+      v seznamu a uvidíte, o co jde.
+    </p>
+  </div>
+
+  <svg class="vlny vlny--dole" viewBox="0 0 1440 80" preserveAspectRatio="none"
+       height="80" aria-hidden="true" focusable="false">
+    <path d="M0,44 C260,6 460,72 720,32 C980,-8 1200,58 1440,20 L1440,80 L0,80 Z" fill="#FFFFFF"/>
+  </svg>
+</section>
+
+<section class="sekce" style="padding-top:48px;">
+  <div class="obal">
+
+    <div class="mapa__ovladani nabihat">
+      <div class="prepinac" id="filtr-obci" role="tablist" aria-label="Filtr podle obce">
+        <button class="prepinac__tlacitko" role="tab" data-obec="vse" aria-selected="true">Obě obce</button>
+        <button class="prepinac__tlacitko" role="tab" data-obec="Chotětov" aria-selected="false">Chotětov</button>
+        <button class="prepinac__tlacitko" role="tab" data-obec="Hřivno" aria-selected="false">Hřivno</button>
+      </div>
+    </div>
+
+    <div class="mapa nabihat">
+      <div>
+        <div id="mapa-plocha" role="application" aria-label="Mapa projektů v Chotětově a ve Hřivně"></div>
+
+        <p class="mapa__poznamka" id="bez-poloh" hidden>
+          Přesné polohy jednotlivých projektů zatím doplňujeme. Mapa zatím ukazuje
+          jen obě obce, seznam projektů najdete vedle.
+        </p>
+      </div>
+
+      <ul class="mapa__seznam" id="seznam-projektu"></ul>
+    </div>
+
+    <p class="mapa__poznamka nabihat">
+      Mapový podklad &copy; přispěvatelé
+      <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.
+    </p>
+
+    <div class="volby nabihat" style="margin-top:56px;">
+      <p class="volby__popis">
+        U každého projektu najdete v programu podrobnosti — jak ho zrealizujeme
+        a na co navazuje.
+      </p>
+      <div class="hero__tlacitka" style="margin-bottom:0;">
+        <a class="tlacitko tlacitko--modre" href="program.html">Přečíst celý program</a>
+        <a class="tlacitko tlacitko--obrys" href="jak-volit.html">Jak správně volit</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================= Patička -->
+<footer class="paticka">
+  <div class="obal">
+
+    <div class="paticka__mrizka">
+      <div>
+        <p class="paticka__logo">SPO<span>LU</span></p>
+        <p>
+          Kandidátní listiny ODS a SNK „Spolu pro Chotětov a Hřivno" pro komunální volby
+          do zastupitelstva městyse Chotětov ve dnech 9. a 10. října 2026.
+        </p>
+      </div>
+
+      <div>
+        <h4>Obsah</h4>
+        <ul>
+          <li><a href="index.html#vysledky">Co jsme udělali</a></li>
+          <li><a href="program.html">Celý program</a></li>
+          <li><a href="mapa.html">Mapa projektů</a></li>
+          <li><a href="kandidati.html">Kandidáti</a></li>
+          <li><a href="jak-volit.html">Jak volit</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Ke stažení</h4>
+        <ul>
+          <li><a href="dokumenty/volebni-program-2026.pdf" download>Volební brožura (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paticka__spodek">
+      <p>© 2026 SPOLU pro Chotětov, Hřivno a ODS</p>
+      <p>Vrátíme obci slušnost, respekt a odpovědnost</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/main.js?v=2026-07-20-2215"></script>
+<script src="js/leaflet/leaflet.js"></script>
+<script src="js/projekty.js?v=2026-07-20-2215"></script>
+<script src="js/mapa.js?v=2026-07-20-2215"></script>
+</body>
+</html>
