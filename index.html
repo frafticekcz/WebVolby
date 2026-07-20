@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPOLU pro Chotětov, Hřivno a ODS 2026 — Vrátíme obci slušnost, respekt a odpovědnost</title>
+<meta name="description" content="Volební program kandidátních listin ODS a SNK Spolu pro Chotětov a Hřivno pro období 2026–2030. Komunální volby 9. a 10. října 2026.">
+<meta name="theme-color" content="#002A7D">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="SPOLU pro Chotětov, Hřivno a ODS 2026">
+<meta property="og:description" content="Vrátíme obci slušnost, respekt a odpovědnost. Volební program pro období 2026–2030.">
+<meta property="og:locale" content="cs_CZ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+</head>
+
+<body>
+<a class="preskocit" href="#obsah">Přeskočit na obsah</a>
+
+<!-- ============================================================ Navigace -->
+<header class="hlavicka" id="hlavicka">
+  <div class="hlavicka__obal">
+
+    <a class="logo" href="index.html" aria-label="SPOLU pro Chotětov, Hřivno a ODS – domovská stránka">
+      <svg class="logo__znak" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="6" y="6" width="88" height="88" rx="10" fill="none" stroke="#002A7D" stroke-width="10"/>
+        <path d="M25 52l17 19 35-42" stroke="#CF0000" stroke-width="13" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="logo__text">SPO<span>LU</span></span>
+        <span class="logo__pod">Chotětov &amp; Hřivno 2026</span>
+      </span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Otevřít menu"
+            aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="menu" id="menu" aria-label="Hlavní navigace">
+      <a href="#vysledky">Co jsme udělali</a>
+      <a href="#lidri">Lídři</a>
+      <a href="#program">Program</a>
+      <a href="#kandidati">Kandidáti</a>
+      <a href="#setkani">Setkání</a>
+      <a class="tlacitko tlacitko--cervene menu__cta" href="#volby">Jdu volit</a>
+    </nav>
+
+    <div class="ukazatel" id="ukazatel" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="obsah">
+
+<!-- ================================================================= Hero -->
+<section class="hero">
+  <div class="hero__obsah">
+    <p class="hero__claim nabihat">Vrátíme obci slušnost,<br>respekt a odpovědnost</p>
+
+    <h1>
+      <span class="hero__spolu nabihat">SPOLU</span>
+      <span class="hero__pro nabihat">pro Chotětov, Hřivno a ODS</span>
+    </h1>
+
+    <div class="hero__rok nabihat">20<span>26</span></div>
+
+    <div class="hero__tlacitka nabihat">
+      <a class="tlacitko tlacitko--modre" href="program.html">
+        Prohlédnout celý program
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a class="tlacitko tlacitko--obrys" href="dokumenty/volebni-program-2026.pdf" download>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3v13m0 0l-5-5m5 5l5-5M4 20h16" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Stáhnout brožuru (PDF)
+      </a>
+    </div>
+  </div>
+
+  <!-- Vlnovky – podpisový prvek brožury -->
+  <svg class="vlny vlny--dole" viewBox="0 0 1440 190" preserveAspectRatio="none"
+       height="190" aria-hidden="true" focusable="false">
+    <path d="M0,120 C240,50 420,158 720,110 C1020,62 1200,150 1440,88 L1440,190 L0,190 Z"
+          fill="#E9EBEF"/>
+    <path d="M0,146 C260,86 430,178 720,134 C1010,90 1210,168 1440,116 L1440,190 L0,190 Z"
+          fill="#3D5FA8" opacity=".9"/>
+    <path d="M0,168 C260,116 440,192 720,156 C1000,120 1220,186 1440,146 L1440,190 L0,190 Z"
+          fill="#CF0000" opacity=".85"/>
+    <path d="M0,182 C280,146 460,200 720,176 C980,152 1230,196 1440,168 L1440,190 L0,190 Z"
+          fill="#FFFFFF"/>
+  </svg>
+
+  <!-- Odpočet do voleb -->
+  <div class="odpocet" id="odpocet" data-volby="2026-10-09T14:00:00">
+    <p class="odpocet__popis">Do otevření volebních místností zbývá</p>
+
+    <div class="odpocet__mrizka">
+      <div class="odpocet__pole">
+        <div class="odpocet__cislo" id="dny">—</div>
+        <div class="odpocet__jednotka" id="dny-popis">dní</div>
+      </div>
+      <div class="odpocet__pole">
+        <div class="odpocet__cislo" id="hodiny">—</div>
+        <div class="odpocet__jednotka">hodin</div>
+      </div>
+      <div class="odpocet__pole">
+        <div class="odpocet__cislo" id="minuty">—</div>
+        <div class="odpocet__jednotka">minut</div>
+      </div>
+      <div class="odpocet__pole">
+        <div class="odpocet__cislo" id="sekundy">—</div>
+        <div class="odpocet__jednotka">sekund</div>
+      </div>
+    </div>
+
+    <div class="odpocet__probiha">
+      <strong>Volby probíhají!</strong>
+      <p>Přijďte odvolit — na vašem hlasu záleží.</p>
+    </div>
+
+    <p class="odpocet__termin">9. a 10. října 2026</p>
+  </div>
+</section>
+
+<!-- ============================================================= Výsledky -->
+<section class="sekce sekce--seda po-odpoctu" id="vysledky">
+  <div class="obal">
+
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">2010 – 2022</span>
+      <h2>Za nás nemluví sliby, ale činy</h2>
+      <div class="podtrzeni"></div>
+      <p>Tři volební období ve vedení městyse. Tohle jsou čísla, která za tu dobu vznikla.</p>
+    </div>
+
+    <div class="cisla">
+      <div class="cislo-karta nabihat">
+        <div class="cislo-karta__hodnota" data-cil="1380">0</div>
+        <div class="cislo-karta__nazev">obyvatel v roce 2022</div>
+        <p class="cislo-karta__popis">Nárůst o 67 % oproti roku 2010, kdy zde žilo 826 občanů.</p>
+      </div>
+
+      <div class="cislo-karta nabihat">
+        <div class="cislo-karta__hodnota" data-cil="88">0</div>
+        <div class="cislo-karta__nazev">míst v mateřských školách</div>
+        <p class="cislo-karta__popis">MŠ Chotětov 63 dětí a nové pracoviště MŠ Hřivno pro 25 dětí.</p>
+      </div>
+
+      <div class="cislo-karta nabihat">
+        <div class="cislo-karta__hodnota" data-cil="44.4">0</div>
+        <div class="cislo-karta__nazev">milionů Kč investováno</div>
+        <p class="cislo-karta__popis">V období 2018–2022, z toho 16,2 mil. Kč získáno z dotací.</p>
+      </div>
+
+      <div class="cislo-karta nabihat">
+        <div class="cislo-karta__hodnota" data-cil="18">0</div>
+        <div class="cislo-karta__nazev">kandidátů na dvou listinách</div>
+        <p class="cislo-karta__popis">Zkušené tváře i lidé, kteří do obecních věcí vstupují nově.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================ Lídři -->
+<section class="sekce" id="lidri">
+  <div class="obal">
+
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">Úvodem</span>
+      <h2>Slovo lídrů obou kandidátek</h2>
+      <div class="podtrzeni"></div>
+    </div>
+
+    <div class="lidri">
+
+      <article class="lidr lidr--ods nabihat">
+        <header class="lidr__hlavicka">
+          <img class="lidr__foto" src="img/kandidati/ods-1-jiru.jpeg"
+               alt="Portrét Blahoslava Jírů" width="76" height="76" loading="lazy">
+          <div>
+            <h3 class="lidr__jmeno">Blahoslav Jírů</h3>
+            <p class="lidr__role">lídr kandidátky ODS<br>66 let, podnikatel</p>
+          </div>
+        </header>
+
+        <div class="lidr__telo">
+          <blockquote class="lidr__citat">
+            „Funkci starosty jsem choval ve velké úctě a po celou dobu jejího výkonu jsem
+            k ní přistupoval vždy odpovědně a s respektem."
+          </blockquote>
+          <p>
+            Ve vedení městyse působím již 4. volební období, v letech 2011 až 2022 na pozici
+            starosty. V nadcházejících volbách kandiduji jako lídr kandidátky ODS bez politické
+            příslušnosti.
+          </p>
+          <p>
+            Vzhledem ke svému věku budu rád, pokud se nám povede vychovat nové mladší
+            perspektivní tváře, které mají o práci pro městys a pro občany skutečný zájem —
+            a předat jim své zkušenosti z dlouholetého působení ve vedení městyse.
+          </p>
+          <p>
+            Nové vedení nastoupí do nelehké situace, jelikož bude nutná stabilizace veřejných
+            financí městyse. Budu rád, když obě naše kandidátky podpoříte svým hlasem
+            a vyberete 9 odpovědných zastupitelů, kterým není lhostejná budoucnost obou obcí.
+          </p>
+        </div>
+      </article>
+
+      <article class="lidr lidr--snk nabihat">
+        <header class="lidr__hlavicka">
+          <img class="lidr__foto" src="img/kandidati/snk-1-urban-martin.jpeg"
+               alt="Portrét Martina Urbana" width="76" height="76" loading="lazy">
+          <div>
+            <h3 class="lidr__jmeno">Martin Urban</h3>
+            <p class="lidr__role">lídr kandidátky SNK Spolu pro Chotětov a Hřivno<br>52 let, řidič</p>
+          </div>
+        </header>
+
+        <div class="lidr__telo">
+          <blockquote class="lidr__citat">
+            „Od dětství jsem byl veden k úctě k ostatním lidem, slušnosti, upřímnosti
+            a pravdomluvnosti."
+          </blockquote>
+          <p>
+            Své působení v zastupitelstvu městyse Chotětov jsem poprvé započal v roce 2014,
+            kdy jste mi dali důvěru a dostatek hlasů, abych mohl vykonávat veřejnou službu pro
+            občany Chotětova a Hřivna. Mandát zastupitele vykonávám již 3 volební období
+            s velkou pokorou a respektem.
+          </p>
+          <p>
+            V nadcházejících volbách kandiduji jako lídr sdružení nezávislých kandidátů
+            „Spolu pro Chotětov a Hřivno" a rád bych, aby se do vedení městyse dostali
+            zodpovědní a pracovití lidé, pro které bude prospěch obou obcí důležitý.
+          </p>
+          <p>
+            Budeme rádi, pokud přijdete k volbám, a tím projevíte zájem o dění v obcích.
+            Hlas každého z Vás je důležitý, proto přijďte volit.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== Program -->
+<section class="sekce sekce--seda" id="program">
+  <div class="obal">
+
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">Plán 2026 – 2030</span>
+      <h2>Osm oblastí, na které se zaměříme</h2>
+      <div class="podtrzeni"></div>
+      <p>
+        U každé oblasti navazujeme na to, co už je hotové. Kompletní přehled včetně
+        realizovaných projektů najdete na stránce s celým programem.
+      </p>
+    </div>
+
+    <div class="oblasti">
+
+      <article class="oblast nabihat">
+        <div class="oblast__cislo">1</div>
+        <h3 class="oblast__nazev">Výstavba a infrastruktura</h3>
+        <ul class="oblast__seznam">
+          <li>Cyklostezka na místě bývalé cukrovarnické vlečky</li>
+          <li>Cyklostezka Chotětov – Bezno</li>
+          <li>Obnova chodníků a komunikací po etapách</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#oblast-1">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="oblast nabihat">
+        <div class="oblast__cislo">2</div>
+        <h3 class="oblast__nazev">Bezpečnost a informace</h3>
+        <ul class="oblast__seznam">
+          <li>Podpora činnosti JSDH Chotětov a spolupráce s Policií ČR</li>
+          <li>Pravdivá a necenzurovaná komunikace o dění v městysu</li>
+          <li>Obnovení tištěného zpravodaje ve formě občasníku</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#oblast-2">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="oblast nabihat">
+        <div class="oblast__cislo">3</div>
+        <h3 class="oblast__nazev">Kultura</h3>
+        <ul class="oblast__seznam">
+          <li>Obnovení tradičního pálení čarodějnic v Chotětově i ve Hřivně</li>
+          <li>Pravidelné kulturní akce — ples, adventní koncert, letní kino</li>
+          <li>Podpora spolků a zájmových organizací</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#oblast-3">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="oblast nabihat">
+        <div class="oblast__cislo">4</div>
+        <h3 class="oblast__nazev">Sport</h3>
+        <ul class="oblast__seznam">
+          <li>Nové workoutové posilovací prvky ve sportovním areálu</li>
+          <li>Sanace tenisového kurtu a hřiště pro plážový volejbal</li>
+          <li>Příprava výstavby nové tělocvičny u ZŠ Chotětov</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#oblast-4">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="oblast nabihat">
+        <div class="oblast__cislo">5</div>
+        <h3 class="oblast__nazev">Životní prostředí</h3>
+        <ul class="oblast__seznam">
+          <li>Obnova polních cest a alejí — II. etapa</li>
+          <li>Studie na novou vodní nádrž a oddechová zóna Na Výslunní</li>
+          <li>Revize odpadového hospodářství, nádoby pro každý dům</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#oblast-5">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="oblast nabihat">
+        <div class="oblast__cislo">6</div>
+        <h3 class="oblast__nazev">Školství</h3>
+        <ul class="oblast__seznam">
+          <li>Vybudování tělocvičny u ZŠ Chotětov</li>
+          <li>Navázání na navýšení kapacit MŠ z 50 na 125 dětí</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#oblast-6">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="oblast nabihat">
+        <div class="oblast__cislo">7</div>
+        <h3 class="oblast__nazev">Služby pro obyvatele</h3>
+        <ul class="oblast__seznam">
+          <li>Společenské centrum v budově č. p. 51 na Husově náměstí</li>
+          <li>Součinnost při přípravě domu pro seniory „Rezidence Jizera"</li>
+          <li>Výpomoc nemohoucím seniorům s odvozem za lékařskou péčí</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#oblast-7">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="oblast nabihat">
+        <div class="oblast__cislo">8</div>
+        <h3 class="oblast__nazev">Hospodaření městyse</h3>
+        <ul class="oblast__seznam">
+          <li>Stabilizace finanční situace městyse Chotětov</li>
+          <li>Ukončení éry schodkových rozpočtů</li>
+          <li>Zodpovědné spravování obecního majetku</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#oblast-8">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+    </div>
+
+    <p style="text-align:center; margin-top:48px;" class="nabihat">
+      <a class="tlacitko tlacitko--modre" href="program.html">
+        Celý program včetně Hřivna
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </p>
+
+  </div>
+</section>
+
+<!-- =========================================================== Kandidáti -->
+<section class="sekce" id="kandidati">
+  <div class="obal">
+
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">Kandidátní listiny</span>
+      <h2>18 lidí, kteří chtějí pracovat pro obě obce</h2>
+      <div class="podtrzeni"></div>
+      <p>Kandidátky v sobě ukrývají jak zkušené a ostřílené kandidáty, tak i nové tváře.</p>
+    </div>
+
+    <div class="prepinac nabihat" role="tablist" aria-label="Výběr kandidátní listiny">
+      <button class="prepinac__tlacitko" id="zalozka-ods" role="tab"
+              aria-selected="true" aria-controls="listina-ods">ODS</button>
+      <button class="prepinac__tlacitko" id="zalozka-snk" role="tab"
+              aria-selected="false" aria-controls="listina-snk">SNK Spolu pro Chotětov a Hřivno</button>
+    </div>
+
+    <!-- Kandidátka ODS -->
+    <div class="kandidati kandidati--ods" id="listina-ods" role="tabpanel"
+         aria-labelledby="zalozka-ods" tabindex="0">
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-1-jiru.jpeg" alt="Blahoslav Jírů" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">1.</span>
+          <span class="kandidat__lidr">Lídr</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Blahoslav Jírů</h3>
+          <p class="kandidat__udaje">66 let, podnikatel</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-2-soucek.jpeg" alt="Jaroslav Souček" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">2.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Jaroslav Souček</h3>
+          <p class="kandidat__udaje">56 let, vedoucí interní logistiky</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-3-honzatko.jpeg" alt="Pavel Honzátko" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">3.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Pavel Honzátko</h3>
+          <p class="kandidat__udaje">48 let, kontrolor</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-4-neset.jpeg" alt="Pavel Neset" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">4.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Mgr. Pavel Neset, Ph.D.</h3>
+          <p class="kandidat__udaje">56 let, vysokoškolský pedagog</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-5-spina.jpeg" alt="Karel Špína" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">5.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Karel Špína</h3>
+          <p class="kandidat__udaje">64 let, podnikatel</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-6-bambuch.jpeg" alt="Jiří Bambuch" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">6.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Jiří Bambuch</h3>
+          <p class="kandidat__udaje">47 let, podnikatel</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-7-strakova.jpeg" alt="Kateřina Straková" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">7.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Kateřina Straková</h3>
+          <p class="kandidat__udaje">52 let, specialista odbytu</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-8-urban-jan.jpeg" alt="Jan Urban" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">8.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Jan Urban</h3>
+          <p class="kandidat__udaje">48 let, operátor logistiky</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/ods-9-rusinakova.jpeg" alt="Lenka Rusiňáková" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">9.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Lenka Rusiňáková</h3>
+          <p class="kandidat__udaje">64 let, důchodce</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Kandidátka SNK -->
+    <div class="kandidati kandidati--snk" id="listina-snk" role="tabpanel"
+         aria-labelledby="zalozka-snk" tabindex="0" hidden>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-1-urban-martin.jpeg" alt="Martin Urban" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">1.</span>
+          <span class="kandidat__lidr">Lídr</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Martin Urban</h3>
+          <p class="kandidat__udaje">52 let, řidič</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-2-weber.jpeg" alt="Vlastimil Weber" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">2.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Ing. Vlastimil Weber</h3>
+          <p class="kandidat__udaje">50 let, embryolog</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-3-hulka.jpeg" alt="Petr Hůlka" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">3.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Petr Hůlka</h3>
+          <p class="kandidat__udaje">43 let, nákupčí</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-4-bezucha.jpeg" alt="Aleš Bezucha" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">4.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Mgr. Aleš Bezucha</h3>
+          <p class="kandidat__udaje">55 let, podnikatel</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-5-stehlik.jpeg" alt="Ondřej Stehlík" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">5.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Ondřej Stehlík</h3>
+          <p class="kandidat__udaje">41 let, VS ČR</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-6-dome.jpeg" alt="Filip Döme" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">6.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Filip Döme</h3>
+          <p class="kandidat__udaje">39 let, prodejce velkoobchod</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-7-korinkova.jpeg" alt="Ladislava Kořínková" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">7.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Ladislava Kořínková</h3>
+          <p class="kandidat__udaje">59 let, referent expedice</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-8-votockova.jpeg" alt="Marie Votočková" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">8.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Mgr. Marie Votočková</h3>
+          <p class="kandidat__udaje">43 let, úřednice</p>
+        </div>
+      </article>
+
+      <article class="kandidat nabihat">
+        <div class="kandidat__obrazek">
+          <img src="img/kandidati/snk-9-celer.jpeg" alt="Martin Celer" loading="lazy" width="297" height="297">
+          <span class="kandidat__poradi">9.</span>
+        </div>
+        <div class="kandidat__telo">
+          <h3 class="kandidat__jmeno">Martin Celer</h3>
+          <p class="kandidat__udaje">46 let, vedoucí údržby</p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================= Setkání -->
+<section class="sekce sekce--modra" id="setkani">
+  <svg class="vlny vlny--nahore" viewBox="0 0 1440 90" preserveAspectRatio="none"
+       height="90" aria-hidden="true" focusable="false">
+    <path d="M0,0 C260,58 460,-8 720,32 C980,72 1200,6 1440,44 L1440,0 Z" fill="#FFFFFF"/>
+  </svg>
+
+  <div class="obal">
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">Přijďte s námi diskutovat</span>
+      <h2>O budoucnosti rozhodujeme společně</h2>
+      <div class="podtrzeni"></div>
+      <p>Sejdeme se v obou obcích. Ptejte se na cokoliv — jsme tu, abychom odpovídali.</p>
+    </div>
+
+    <div class="setkani">
+      <article class="akce nabihat">
+        <p class="akce__datum"><span>11. 9.</span> 2026</p>
+        <h3 class="akce__misto">Hřivno</h3>
+        <p class="akce__detail">
+          <span class="akce__cas">17:00</span>
+          <span>hřiště za MŠ</span>
+        </p>
+      </article>
+
+      <article class="akce nabihat">
+        <p class="akce__datum"><span>12. 9.</span> 2026</p>
+        <h3 class="akce__misto">Chotětov</h3>
+        <p class="akce__detail">
+          <span class="akce__cas">15:00</span>
+          <span>před hasičskou zbrojnicí</span>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== Volby -->
+<section class="sekce" id="volby">
+  <div class="obal obal--uzky volby">
+
+    <svg class="volby__zaskrtnuti nabihat" viewBox="0 0 100 100" aria-hidden="true">
+      <rect x="5" y="5" width="90" height="90" rx="6" fill="none" stroke="#002A7D" stroke-width="9"/>
+      <path d="M22 50l19 21 38-46" stroke="#CF0000" stroke-width="13" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <p class="hero__claim nabihat" style="margin-bottom:20px;">Váš hlas, vaše volba</p>
+
+    <h2 class="volby__termin nabihat"><span>9. a 10.</span> října 2026</h2>
+
+    <p class="volby__popis nabihat">
+      Přijďte k volbám a vyberte 9 odpovědných zastupitelů, kterým není lhostejná
+      budoucnost Chotětova a Hřivna. Hlas každého z Vás je důležitý.
+    </p>
+
+    <div class="hero__tlacitka nabihat" style="margin-bottom:0;">
+      <a class="tlacitko tlacitko--cervene" href="program.html">Přečíst celý program</a>
+      <a class="tlacitko tlacitko--obrys" href="dokumenty/volebni-program-2026.pdf" download>
+        Stáhnout brožuru (PDF)
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================= Patička -->
+<footer class="paticka">
+  <div class="obal">
+
+    <div class="paticka__mrizka">
+      <div>
+        <p class="paticka__logo">SPO<span>LU</span></p>
+        <p>
+          Kandidátní listiny ODS a SNK „Spolu pro Chotětov a Hřivno" pro komunální volby
+          do zastupitelstva městyse Chotětov ve dnech 9. a 10. října 2026.
+        </p>
+      </div>
+
+      <div>
+        <h4>Obsah</h4>
+        <ul>
+          <li><a href="#vysledky">Co jsme udělali</a></li>
+          <li><a href="#lidri">Slovo lídrů</a></li>
+          <li><a href="program.html">Celý program</a></li>
+          <li><a href="#kandidati">Kandidáti</a></li>
+          <li><a href="#setkani">Setkání s občany</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Ke stažení</h4>
+        <ul>
+          <li><a href="dokumenty/volebni-program-2026.pdf" download>Volební brožura (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paticka__spodek">
+      <p>© 2026 SPOLU pro Chotětov, Hřivno a ODS</p>
+      <p>Vrátíme obci slušnost, respekt a odpovědnost</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
