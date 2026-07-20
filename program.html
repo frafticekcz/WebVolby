@@ -70,7 +70,8 @@
     <h1>Volební program kandidátních listin</h1>
     <p>
       pro období 2026 – 2030. U každé oblasti najdete, co se podařilo realizovat
-      v letech 2010 – 2022, a co plánujeme dál.
+      v letech 2010 – 2022, a co plánujeme dál. Jednotlivé body plánu si můžete
+      rozkliknout a zobrazit podrobnosti.
     </p>
   </div>
 
@@ -194,18 +195,62 @@
             Plán 2026 – 2030
           </p>
 
+          <!-- ==================================================================
+               VZOR PRO DOPLNĚNÍ DETAILU BODU
+
+               Každý bod plánu se dá rozkliknout. Obsah <div class="detail__obsah">
+               nahraďte skutečnými informacemi podle tohoto vzoru — odstavce
+               i seznam parametrů jsou volitelné, použijte jen to, co dává smysl:
+
+               <div class="detail__obsah">
+                 <p>Popis toho, jak se záměr zrealizuje.</p>
+                 <dl class="parametry">
+                   <div><dt>Postup</dt><dd>Ve dvou etapách, začínáme úsekem…</dd></div>
+                   <div><dt>Odhadované náklady</dt><dd>4,5 mil. Kč</dd></div>
+                   <div><dt>Zdroj financování</dt><dd>Dotace SFDI, spoluúčast městyse 15 %</dd></div>
+                   <div><dt>Předpokládaný termín</dt><dd>2027 – 2028</dd></div>
+                 </dl>
+               </div>
+
+               Třída "chybi" označuje zatím nedoplněný text — až budou podklady
+               hotové, neměla by zůstat nikde na stránce.
+               ================================================================== -->
+
           <ul class="body">
-            <li>
-              Výstavba cyklostezky na místě bývalé cukrovarnické vlečky
-              <span class="pozn">Již ve volebním období 2018 – 2022 získáno stavební povolení</span>
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Výstavba cyklostezky na místě bývalé cukrovarnické vlečky
+                  <span class="pozn">Již ve volebním období 2018 – 2022 získáno stavební povolení</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Výstavba cyklostezky Chotětov – Bezno
-              <span class="pozn">Navázání na projekt rozpracovaný současným vedením městyse</span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Výstavba cyklostezky Chotětov – Bezno
+                  <span class="pozn">Navázání na projekt rozpracovaný současným vedením městyse</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Obnova a oprava chodníků a komunikací na území Chotětova a Hřivna po etapách
-              <span class="pozn">Ve volebním období 2018 – 2022 zpracována projektová dokumentace</span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Obnova a oprava chodníků a komunikací na území Chotětova a Hřivna po etapách
+                  <span class="pozn">Ve volebním období 2018 – 2022 zpracována projektová dokumentace</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
           </ul>
         </div>
@@ -251,22 +296,53 @@
           </p>
 
           <ul class="body">
-            <li>Úzká spolupráce a podpora činnosti JSDH Chotětov</li>
-            <li>Navázání na úzkou spolupráci s Policií ČR</li>
-            <li>
-              Pravdivá a necenzurovaná komunikace o dění v městysu v rámci oficiálních
-              platforem (Facebook, Munipolis)
-              <ul>
-                <li>Informace o hospodaření městysu</li>
-                <li>Propagace činnosti zájmových organizací a spolků</li>
-                <li>
-                  Provozní informace (odstávky vody, výpadky el. energie,
-                  změna otevírací doby obecního úřadu, pošty apod.)
-                </li>
-                <li>Zlepšení krizové komunikace</li>
-              </ul>
+            <li class="bod">
+              <details class="detail">
+                <summary>Úzká spolupráce a podpora činnosti JSDH Chotětov</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>Obnovení tištěného obecního zpravodaje ve formě občasníku</li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Navázání na úzkou spolupráci s Policií ČR</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Pravdivá a necenzurovaná komunikace o dění v městysu v rámci oficiálních
+                  platforem (Facebook, Munipolis)
+                </summary>
+                <div class="detail__obsah">
+                  <ul>
+                    <li>Informace o hospodaření městysu</li>
+                    <li>Propagace činnosti zájmových organizací a spolků</li>
+                    <li>
+                      Provozní informace (odstávky vody, výpadky el. energie,
+                      změna otevírací doby obecního úřadu, pošty apod.)
+                    </li>
+                    <li>Zlepšení krizové komunikace</li>
+                  </ul>
+                  <p class="chybi">Další podrobnosti zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Obnovení tištěného obecního zpravodaje ve formě občasníku</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
           </ul>
         </div>
 
@@ -316,29 +392,71 @@
           </p>
 
           <ul class="body">
-            <li>Obnovení tradičního pálení čarodějnic <span class="pozn">v Chotětově a ve Hřivně</span></li>
-            <li>
-              Pravidelná organizace kulturních akcí
-              <span class="pozn">Ples městyse Chotětov, Adventní koncert v kostele</span>
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Obnovení tradičního pálení čarodějnic
+                  <span class="pozn">v Chotětově a ve Hřivně</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Obnovení a pravidelná organizace kulturních akcí
-              <span class="pozn">
-                Den městyse Chotětov, Letní kino, Cirkus pro děti,
-                Dětský den – ukončení školního roku a další
-              </span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Pravidelná organizace kulturních akcí
+                  <span class="pozn">Ples městyse Chotětov, Adventní koncert v kostele</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Pokračování podpory každé aktivity pro pořádání kulturních akcí
-              ze strany zájmových organizací a spolků
-              <span class="pozn">
-                Rádi v případě zájmu pomůžeme s podporou a propagací akce,
-                avšak organizátorem zůstává daná organizace či spolek
-              </span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Obnovení a pravidelná organizace kulturních akcí
+                  <span class="pozn">
+                    Den městyse Chotětov, Letní kino, Cirkus pro děti,
+                    Dětský den – ukončení školního roku a další
+                  </span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Pokračování aktivit ve významných občanských záležitostech
-              <span class="pozn">Vítání občánků, životní jubilea</span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Pokračování podpory každé aktivity pro pořádání kulturních akcí
+                  ze strany zájmových organizací a spolků
+                  <span class="pozn">
+                    Rádi v případě zájmu pomůžeme s podporou a propagací akce,
+                    avšak organizátorem zůstává daná organizace či spolek
+                  </span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Pokračování aktivit ve významných občanských záležitostech
+                  <span class="pozn">Vítání občánků, životní jubilea</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
           </ul>
         </div>
@@ -384,19 +502,50 @@
           </p>
 
           <ul class="body">
-            <li>
-              Podpora pro udržení a případně rozšíření sportovních aktivit v městysu
-              <span class="pozn">
-                Fotbal, stolní tenis, šipky, hasičský sport, veškerý mládežnický sport
-              </span>
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Podpora pro udržení a případně rozšíření sportovních aktivit v městysu
+                  <span class="pozn">
+                    Fotbal, stolní tenis, šipky, hasičský sport, veškerý mládežnický sport
+                  </span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>Nové workoutové posilovací prvky ve sportovním areálu v Chotětově</li>
-            <li>
-              Sanace zanedbaného stavu tenisového kurtu, víceúčelového hřiště
-              a hřiště pro plážový volejbal
-              <span class="pozn">Zavedení systému rezervací, pravidelná údržba a spravování hřišť</span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Nové workoutové posilovací prvky ve sportovním areálu v Chotětově</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>Příprava výstavby nové tělocvičny u ZŠ Chotětov</li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Sanace zanedbaného stavu tenisového kurtu, víceúčelového hřiště
+                  a hřiště pro plážový volejbal
+                  <span class="pozn">Zavedení systému rezervací, pravidelná údržba a spravování hřišť</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Příprava výstavby nové tělocvičny u ZŠ Chotětov</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
           </ul>
         </div>
 
@@ -446,20 +595,65 @@
           </p>
 
           <ul class="body">
-            <li>
-              Realizace obnovy polních cest a alejí – II. etapa
-              <span class="pozn">Již ve volebním období 2018 – 2022 zpracována projektová dokumentace</span>
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Realizace obnovy polních cest a alejí – II. etapa
+                  <span class="pozn">Již ve volebním období 2018 – 2022 zpracována projektová dokumentace</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>Studie na realizaci nové vodní nádrže v Chotětově</li>
-            <li>Realizace oddechové zóny v lokalitě Na Výslunní</li>
-            <li>Modernizace a oprava sběrného dvora</li>
-            <li>Rozšíření péče o veřejná prostranství, zeleň a úklid v obou obcích</li>
-            <li>
-              Revize a změna systému odpadového hospodářství
-              <ul>
-                <li>Odpadové nádoby pro každý dům, revize stávajícího systému</li>
-                <li>Navýšení podílu vytříděného odpadu</li>
-              </ul>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Studie na realizaci nové vodní nádrže v Chotětově</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Realizace oddechové zóny v lokalitě Na Výslunní</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Modernizace a oprava sběrného dvora</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Rozšíření péče o veřejná prostranství, zeleň a úklid v obou obcích</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Revize a změna systému odpadového hospodářství</summary>
+                <div class="detail__obsah">
+                  <ul>
+                    <li>Odpadové nádoby pro každý dům, revize stávajícího systému</li>
+                    <li>Navýšení podílu vytříděného odpadu</li>
+                  </ul>
+                  <p class="chybi">Další podrobnosti zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
           </ul>
         </div>
@@ -539,7 +733,14 @@
           </p>
 
           <ul class="body">
-            <li>Vybudování tělocvičny u ZŠ Chotětov</li>
+            <li class="bod">
+              <details class="detail">
+                <summary>Vybudování tělocvičny u ZŠ Chotětov</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
           </ul>
         </div>
 
@@ -596,15 +797,38 @@
           </p>
 
           <ul class="body">
-            <li>Vybudování společenského centra v budově č. p. 51 v Chotětově na Husově náměstí</li>
-            <li>
-              Přispějeme součinností městysu při přípravě záměru výstavby domu pro seniory
-              „Rezidence Jizera" v zástavbové ploše Z2b
+            <li class="bod">
+              <details class="detail">
+                <summary>Vybudování společenského centra v budově č. p. 51 v Chotětově na Husově náměstí</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Výpomoc městyse nemohoucím seniorům s odvozem za lékařskou péčí
-              v nutných případech
-              <span class="pozn">tj. bez možnosti využití pomoci svých blízkých</span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Přispějeme součinností městysu při přípravě záměru výstavby domu pro seniory
+                  „Rezidence Jizera" v zástavbové ploše Z2b
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Výpomoc městyse nemohoucím seniorům s odvozem za lékařskou péčí
+                  v nutných případech
+                  <span class="pozn">tj. bez možnosti využití pomoci svých blízkých</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
           </ul>
         </div>
@@ -654,12 +878,43 @@
           </p>
 
           <ul class="body">
-            <li>Stabilizace finanční situace městyse Chotětov</li>
-            <li>Ukončení éry schodkových rozpočtů</li>
-            <li>Zodpovědné spravování obecního majetku</li>
-            <li>
-              Revize financování investiční akce Rekonstrukce budovy základní školy
-              a výstavba šaten – ZŠ Chotětov
+            <li class="bod">
+              <details class="detail">
+                <summary>Stabilizace finanční situace městyse Chotětov</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Ukončení éry schodkových rozpočtů</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>Zodpovědné spravování obecního majetku</summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
+            </li>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Revize financování investiční akce Rekonstrukce budovy základní školy
+                  a výstavba šaten – ZŠ Chotětov
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
           </ul>
         </div>
@@ -715,26 +970,65 @@
           </p>
 
           <ul class="body">
-            <li>
-              Obnova a oprava chodníků po etapách
-              <span class="pozn">Ve volebním období 2018 – 2022 zpracována projektová dokumentace</span>
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Obnova a oprava chodníků po etapách
+                  <span class="pozn">Ve volebním období 2018 – 2022 zpracována projektová dokumentace</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Realizace projektu „Hřivenský plácek"
-              <span class="pozn">Nové víceúčelové hřiště, obměna dětského hřiště, zázemí s WC</span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Realizace projektu „Hřivenský plácek"
+                  <span class="pozn">Nové víceúčelové hřiště, obměna dětského hřiště, zázemí s WC</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Komunikace s obcí Zdětín ohledně propojení polních cest v okolí Hřivna
-              <span class="pozn">Více možných pěších tras do Chotětova i okolí</span>
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Komunikace s obcí Zdětín ohledně propojení polních cest v okolí Hřivna
+                  <span class="pozn">Více možných pěších tras do Chotětova i okolí</span>
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Zpracování studie na výstavbu komunitního a společenského centra Hřivno
-              vedle budovy č. p. 15
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Zpracování studie na výstavbu komunitního a společenského centra Hřivno
+                  vedle budovy č. p. 15
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
-            <li>
-              Komunikace s Krajskou správou a údržbou silnic a se Středočeským krajem
-              s cílem prosadit rekonstrukci komunikace č. III/27216 v úseku Hřivno – Zdětín,
-              a to z důvodu již nevyhovujícího a havarijního stavu vozovky
+
+            <li class="bod">
+              <details class="detail">
+                <summary>
+                  Komunikace s Krajskou správou a údržbou silnic a se Středočeským krajem
+                  s cílem prosadit rekonstrukci komunikace č. III/27216 v úseku Hřivno – Zdětín,
+                  a to z důvodu již nevyhovujícího a havarijního stavu vozovky
+                </summary>
+                <div class="detail__obsah">
+                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                </div>
+              </details>
             </li>
           </ul>
         </div>

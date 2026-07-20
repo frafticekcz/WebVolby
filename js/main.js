@@ -27,15 +27,16 @@
   }, { passive: true });
 
   /* Zavolá `akce(prvek)` ve chvíli, kdy se prvek dostane do okna.
-     Kromě scrollu se stav ověřuje i v pravidelném intervalu — scrollová
-     událost se totiž nemusí spustit u programového posunu stránky
-     (skok na kotvu, obnovená pozice po návratu zpět). Interval se sám
-     ukončí, jakmile jsou všechny prvky odbavené.                        */
+     Vedle scrollu kontrolujeme i po skoku na kotvu, po návratu zpět
+     a v několika okamžicích po načtení — samotná scrollová událost se
+     u programového posunu stránky spustit nemusí a obsah by pak
+     zůstal trvale neviditelný.                                        */
   function priVstupuDoOkna(prvky, rezerva, akce) {
     var cekajici = prvky.slice();
     if (!cekajici.length) return;
 
     function prohlednout() {
+      if (!cekajici.length) return;
       var vyska = window.innerHeight;
 
       cekajici = cekajici.filter(function (p) {
@@ -46,13 +47,18 @@
         }
         return true;
       });
-
-      if (!cekajici.length) clearInterval(hlidac);
     }
 
-    var hlidac = setInterval(prohlednout, 250);
     naScroll(prohlednout);
     window.addEventListener("resize", prohlednout, { passive: true });
+    window.addEventListener("hashchange", prohlednout);
+    window.addEventListener("popstate", prohlednout);
+    window.addEventListener("load", prohlednout);
+
+    // Prohlídky krátce po startu pokrývají obnovení pozice scrollu
+    // prohlížečem i dopočítání rozměrů po načtení fontů a obrázků.
+    [0, 300, 1000, 2500].forEach(function (ms) { setTimeout(prohlednout, ms); });
+
     prohlednout();
   }
 

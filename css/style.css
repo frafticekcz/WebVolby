@@ -284,8 +284,16 @@ p:last-child { margin-bottom: 0; }
   background: var(--cervena);
 }
 
-.menu__cta { margin-left: 10px; padding: 11px 22px !important; font-size: .93rem !important; }
-.menu__cta::after { display: none !important; }
+/* Selektor musí přebít `.menu a`, jinak by tlačítko zdědilo tmavý text */
+.menu a.menu__cta {
+  margin-left: 10px;
+  padding: 11px 22px;
+  font-size: .93rem;
+  color: #fff;
+  background: var(--cervena);
+}
+.menu a.menu__cta:hover { color: #fff; background: #A80000; }
+.menu a.menu__cta::after { display: none; }
 
 /* Ukazatel scrollu */
 .ukazatel {
@@ -325,11 +333,12 @@ p:last-child { margin-bottom: 0; }
 /* ==========================================================================
    Hero
    ========================================================================== */
+/* Bez overflow:hidden — odpočet z hera záměrně vyčnívá dolů
+   a klipování by mu uřízlo popisky jednotek i termín voleb. */
 .hero {
   position: relative;
   padding: 84px 0 0;
   background: radial-gradient(ellipse 120% 80% at 50% 0%, #fff 0%, var(--seda-svetla) 100%);
-  overflow: hidden;
 }
 
 .hero__obsah {
@@ -607,20 +616,26 @@ p:last-child { margin-bottom: 0; }
 /* ==========================================================================
    Oblasti programu
    ========================================================================== */
+/* Oblastí je osm — dva sloupce je rozdělí beze zbytku (4 řádky).
+   Tři sloupce by nechaly v posledním řádku prázdné místo.        */
 .oblasti {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
 }
 
+/* Číslo je vlevo přes celou výšku karty, obsah vedle něj */
 .oblast {
   background: #fff;
   border: 1px solid var(--seda-linka);
   border-radius: var(--radius-velky);
   padding: 30px 28px;
   box-shadow: var(--stin-jemny);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  grid-template-rows: auto 1fr auto;
+  column-gap: 22px;
+  align-content: start;
   transition: transform var(--prechod), box-shadow var(--prechod), border-color var(--prechod);
 }
 .oblast:hover {
@@ -630,28 +645,32 @@ p:last-child { margin-bottom: 0; }
 }
 
 .oblast__cislo {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
   background: var(--modra-jemna);
   color: var(--modra);
   font-family: var(--font-nadpis);
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   display: grid;
   place-items: center;
-  margin-bottom: 18px;
   transition: background-color var(--prechod), color var(--prechod);
 }
 .oblast:hover .oblast__cislo { background: var(--modra); color: #fff; }
 
 .oblast__nazev {
+  grid-column: 2;
   font-family: var(--font-nadpis);
   font-weight: 700;
-  font-size: 1.18rem;
+  font-size: 1.22rem;
   color: var(--modra);
-  margin-bottom: 14px;
+  margin: 6px 0 14px;
 }
+.oblast__seznam,
+.oblast__odkaz { grid-column: 2; }
 
 .oblast__seznam {
   list-style: none;
@@ -726,10 +745,13 @@ p:last-child { margin-bottom: 0; }
   box-shadow: var(--stin-jemny);
 }
 
+/* Kandidátů je na každé listině devět — mřížka 3×3 vychází přesně */
 .kandidati {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
+  max-width: 860px;
+  margin-inline: auto;
 }
 .kandidati[hidden] { display: none; }
 
@@ -743,6 +765,9 @@ p:last-child { margin-bottom: 0; }
   transition: transform var(--prechod), box-shadow var(--prechod);
 }
 .kandidat:hover { transform: translateY(-6px); box-shadow: var(--stin-vyrazny); }
+
+/* Lídra kandidátky odlišíme červeným orámováním */
+.kandidat--lidr { border-color: var(--cervena); box-shadow: 0 6px 22px rgba(207, 0, 0, .14); }
 
 .kandidat__obrazek { position: relative; background: var(--seda-svetla); }
 .kandidat__obrazek img {
@@ -1095,6 +1120,92 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.5;
 }
 
+/* --------------------------- Rozklikávací detail bodu programu ------ */
+/* Bod s detailem nemá vlastní odrážku – tu kreslí až summary,
+   aby zůstala zarovnaná s textem uvnitř rozbalovacího prvku. */
+.body > li.bod::before { display: none; }
+
+.detail > summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 2px 30px 2px 0;
+  border-radius: 8px;
+  transition: color var(--prechod);
+}
+.detail > summary::-webkit-details-marker { display: none; }
+.detail > summary:hover { color: var(--cervena); }
+
+/* Odrážka bodu */
+.detail > summary::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: .5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cervena);
+}
+
+/* Šipka vpravo, po rozbalení otočená */
+.detail > summary::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: .42em;
+  width: 9px;
+  height: 9px;
+  border-right: 2.4px solid var(--modra-svetla);
+  border-bottom: 2.4px solid var(--modra-svetla);
+  transform: rotate(45deg);
+  transition: transform var(--prechod);
+}
+.detail[open] > summary::after { transform: rotate(-135deg); }
+
+.detail__obsah {
+  margin: 14px 0 4px;
+  padding: 18px 20px;
+  background: var(--seda-svetla);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--modra-svetla);
+  font-weight: 400;
+}
+.detail__obsah p { font-size: .95rem; color: #3A4256; }
+
+/* Parametry záměru – náklady, termín, postup */
+.parametry {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.parametry > div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 4px 16px;
+}
+.parametry dt {
+  font-family: var(--font-nadpis);
+  font-weight: 600;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--modra);
+}
+.parametry dd { margin: 0; font-size: .95rem; color: #3A4256; }
+
+/* Zvýraznění dosud nedoplněného textu – ve zveřejněné verzi
+   by se tato třída už neměla nikde vyskytovat. */
+.chybi {
+  color: var(--seda-text);
+  font-style: italic;
+  font-size: .93rem;
+}
+
+@media (max-width: 560px) {
+  .parametry > div { grid-template-columns: 1fr; }
+}
+
 /* Vnořený seznam */
 .body ul {
   list-style: none;
@@ -1149,6 +1260,7 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-nadpis);
   font-weight: 700;
   background: var(--cervena-jemna);
+  white-space: nowrap;
 }
 
 .tabulka__popisek {
@@ -1195,6 +1307,7 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 980px) {
   .paticka__mrizka { grid-template-columns: 1fr 1fr; gap: 32px; }
   .blok__sloupce   { grid-template-columns: 1fr; }
+  .oblasti         { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
@@ -1249,8 +1362,40 @@ p:last-child { margin-bottom: 0; }
   .paticka__spodek { flex-direction: column; }
 }
 
+/* Na úzkých displejích ať jsou obě listiny stejně široká tlačítka pod sebou —
+   název sdružení je dlouhý a v řádku by se lámal nečitelně. */
+@media (max-width: 620px) {
+  .prepinac {
+    flex-direction: column;
+    width: 100%;
+    border-radius: var(--radius-velky);
+  }
+  .prepinac__tlacitko { width: 100%; padding: 14px 18px; }
+}
+
+@media (max-width: 560px) {
+  /* Číslo oblasti nad obsah — v úzkém sloupci vedle textu
+     zbývalo na text příliš málo místa a lámal se po dvou slovech. */
+  .oblast { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr auto; }
+  .oblast__cislo   { grid-column: 1; grid-row: 1; margin-bottom: 16px; }
+  .oblast__nazev,
+  .oblast__seznam,
+  .oblast__odkaz   { grid-column: 1; }
+  .oblast__nazev   { margin-top: 0; }
+}
+
+@media (max-width: 520px) {
+  /* Ve dvou sloupcích zbyde devátý kandidát sám — vycentrujeme ho */
+  .kandidati { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .kandidati > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 7px);
+  }
+}
+
 @media (max-width: 420px) {
-  .kandidati { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .kandidati { gap: 12px; }
   .kandidat__telo  { padding: 13px 9px 16px; }
   .kandidat__jmeno { font-size: .87rem; }
   .kandidat__udaje { font-size: .78rem; }
