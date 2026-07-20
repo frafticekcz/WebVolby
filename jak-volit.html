@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jak volit v komunálních volbách 2026 — SPOLU pro Chotětov, Hřivno a ODS</title>
+<meta name="description" content="Srozumitelný návod, jak hlasovat ve volbách do zastupitelstva městyse Chotětov 9. a 10. října 2026. Tři způsoby hlasování, nejčastější chyby a interaktivní ukázka hlasovacího lístku.">
+<meta name="theme-color" content="#002A7D">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jak volit v komunálních volbách 2026">
+<meta property="og:description" content="Tři způsoby hlasování, nejčastější chyby a interaktivní ukázka hlasovacího lístku.">
+<meta property="og:locale" content="cs_CZ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+<!-- Náběhové animace se zapnou jen tam, kde je JavaScript k dispozici -->
+<script>document.documentElement.className += " js";</script>
+</head>
+
+<body>
+<a class="preskocit" href="#obsah">Přeskočit na obsah</a>
+
+<!-- ============================================================ Navigace -->
+<header class="hlavicka" id="hlavicka">
+  <div class="hlavicka__obal">
+
+    <a class="logo" href="index.html" aria-label="SPOLU pro Chotětov, Hřivno a ODS – domovská stránka">
+      <svg class="logo__znak" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="6" y="6" width="88" height="88" rx="10" fill="none" stroke="#002A7D" stroke-width="10"/>
+        <path d="M25 52l17 19 35-42" stroke="#CF0000" stroke-width="13" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="logo__text">SPO<span>LU</span></span>
+        <span class="logo__pod">Chotětov &amp; Hřivno 2026</span>
+      </span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Otevřít menu"
+            aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="menu" id="menu" aria-label="Hlavní navigace">
+      <a href="index.html#vysledky">Co jsme udělali</a>
+      <a href="program.html">Program</a>
+      <a href="kandidati.html">Kandidáti</a>
+      <a href="jak-volit.html" class="je-aktivni" aria-current="page">Jak volit</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a class="tlacitko tlacitko--cervene menu__cta" href="#simulator">Vyzkoušet lístek</a>
+    </nav>
+
+    <div class="ukazatel" id="ukazatel" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="obsah">
+
+<!-- ========================================================= Podhlavička -->
+<section class="podhlavicka">
+  <div class="obal">
+    <nav class="drobecky" aria-label="Drobečková navigace">
+      <a href="index.html">Úvod</a> &nbsp;/&nbsp; Jak volit
+    </nav>
+    <h1>Jak volit</h1>
+    <p>
+      Komunální volby fungují jinak než ty ostatní — křížkuje se, hlasů máte devět
+      a můžete je rozdělit napříč kandidátkami. Za pět minut budete vědět všechno,
+      co potřebujete.
+    </p>
+  </div>
+
+  <svg class="vlny vlny--dole" viewBox="0 0 1440 80" preserveAspectRatio="none"
+       height="80" aria-hidden="true" focusable="false">
+    <path d="M0,44 C260,6 460,72 720,32 C980,-8 1200,58 1440,20 L1440,80 L0,80 Z" fill="#FFFFFF"/>
+  </svg>
+</section>
+
+<section class="sekce" style="padding-top:56px;">
+  <div class="obal">
+
+    <!-- ================================================== Rychlá fakta -->
+    <div class="fakta">
+
+      <div class="fakt nabihat">
+        <div class="fakt__ikona" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="5" width="18" height="16" rx="2.5" stroke="#002A7D" stroke-width="2"/>
+            <path d="M3 10h18M8 3v4M16 3v4" stroke="#002A7D" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="fakt__nazev">Kdy</p>
+        <p class="fakt__hodnota">
+          pátek 9. 10. 2026<br>14:00 – 22:00
+          <small>a sobota 10. 10. od 8:00 do 14:00</small>
+        </p>
+      </div>
+
+      <div class="fakt nabihat">
+        <div class="fakt__ikona" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z" stroke="#002A7D" stroke-width="2"/>
+            <circle cx="12" cy="10" r="2.6" stroke="#002A7D" stroke-width="2"/>
+          </svg>
+        </div>
+        <p class="fakt__nazev">Kde</p>
+        <p class="fakt__hodnota">
+          <span class="chybi">Doplníme adresu volební místnosti</span>
+          <small>Volit lze jen v okrsku podle trvalého pobytu</small>
+        </p>
+      </div>
+
+      <div class="fakt nabihat">
+        <div class="fakt__ikona" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#002A7D" stroke-width="2"/>
+            <circle cx="9" cy="11" r="2.2" stroke="#002A7D" stroke-width="2"/>
+            <path d="M14 10h4M14 14h4M5.5 16c.8-1.5 2-2.2 3.5-2.2s2.7.7 3.5 2.2"
+                  stroke="#002A7D" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="fakt__nazev">Co s sebou</p>
+        <p class="fakt__hodnota">
+          Občanský průkaz
+          <small>nebo cestovní pas ČR — jiný doklad nestačí</small>
+        </p>
+      </div>
+
+      <div class="fakt nabihat">
+        <div class="fakt__ikona" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="4" width="16" height="16" rx="2.5" stroke="#002A7D" stroke-width="2"/>
+            <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#CF0000" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="fakt__nazev">Kolik křížků</p>
+        <p class="fakt__hodnota">
+          Nejvýše 9
+          <small>tolik, kolik se volí zastupitelů</small>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ================================================ Krok za krokem -->
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">Krok za krokem</span>
+      <h2>Jak to bude probíhat</h2>
+      <div class="podtrzeni"></div>
+    </div>
+
+    <ol class="kroky">
+      <li class="krok nabihat">
+        <h3>Hlasovací lístky přijdou domů</h3>
+        <p>
+          Nejpozději tři dny před volbami, tedy do úterý 6. října, dostanete do schránky
+          hlasovací lístek se všemi kandidátkami. Vezměte si ho s sebou — ušetříte si čas.
+          Pokud nedorazí nebo ho ztratíte, nové dostanete přímo ve volební místnosti.
+        </p>
+      </li>
+
+      <li class="krok nabihat">
+        <h3>Přijďte s občanským průkazem</h3>
+        <p>
+          Ve volební místnosti prokážete totožnost a státní občanství občanským průkazem
+          nebo cestovním pasem ČR. Bez dokladu vás komise hlasovat nenechá. Dostanete
+          úřední obálku s razítkem.
+        </p>
+      </li>
+
+      <li class="krok nabihat">
+        <h3>Za plentou upravte lístek</h3>
+        <p>
+          Vstup do prostoru za plentou je povinný — bez toho vám komise hlasování neumožní.
+          Na lístku uděláte křížky jedním ze tří způsobů, které popisujeme níže.
+          Používejte výhradně <strong>křížky</strong>; kolečka, fajfky ani podtržení neplatí.
+        </p>
+      </li>
+
+      <li class="krok nabihat">
+        <h3>Lístek vložte do úřední obálky</h3>
+        <p>
+          Do obálky patří <strong>jeden jediný</strong> hlasovací lístek. Víc lístků
+          v jedné obálce znamená neplatný hlas. Lístek netrhejte ani nijak neupravujte
+          nad rámec křížků.
+        </p>
+      </li>
+
+      <li class="krok nabihat">
+        <h3>Obálku vhoďte do urny</h3>
+        <p>
+          A je hotovo. Pokud se ze zdravotních důvodů nemůžete do volební místnosti dostavit,
+          požádejte obecní úřad nebo přímo volební komisi o přenosnou volební schránku —
+          komise za vámi přijede domů, ale jen v rámci vašeho volebního okrsku.
+        </p>
+      </li>
+    </ol>
+
+  </div>
+</section>
+
+<!-- ================================================ Tři způsoby hlasování -->
+<section class="sekce sekce--seda">
+  <div class="obal">
+
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">Tři možnosti</span>
+      <h2>Jak můžete rozdat svých 9 hlasů</h2>
+      <div class="podtrzeni"></div>
+      <p>
+        Zákon připouští tři způsoby úpravy lístku. Můžete si vybrat kterýkoli —
+        všechny jsou platné.
+      </p>
+    </div>
+
+    <div class="zpusoby">
+
+      <article class="zpusob nabihat">
+        <h3>1. Křížek u jedné strany</h3>
+        <p>
+          Uděláte jeden křížek do čtverečku v záhlaví sloupce. Hlas tím dostane
+          všech devět kandidátů této kandidátky v pořadí, jak jsou uvedeni.
+          Nejrychlejší varianta.
+        </p>
+      </article>
+
+      <article class="zpusob zpusob--doporuceny nabihat">
+        <span class="zpusob__stitek">Podpora obou našich listin</span>
+        <h3>2. Křížky u jednotlivých jmen</h3>
+        <p>
+          Zakřížkujete až devět konkrétních lidí, klidně napříč různými kandidátkami.
+          Tomuhle se říká panašování a je to <strong>jediný spolehlivý způsob,
+          jak podpořit obě naše kandidátky zároveň</strong>.
+        </p>
+      </article>
+
+      <article class="zpusob nabihat">
+        <h3>3. Kombinace obojího</h3>
+        <p>
+          Označíte jednu stranu a k tomu kandidáty z jiných stran. Pozor: hlasy
+          se odečítají. Když k označené straně přidáte čtyři jména odjinud,
+          ze strany dostanou hlas jen první pětice kandidátů.
+        </p>
+      </article>
+
+    </div>
+
+    <!-- ============================================= Interaktivní lístek -->
+    <div class="hlavicka-sekce nabihat" style="margin-top:72px;">
+      <span class="stitek">Vyzkoušejte si to</span>
+      <h2>Zkušební hlasovací lístek</h2>
+      <div class="podtrzeni"></div>
+      <p>
+        Klikejte na čtverečky a rámečky stejně, jako byste to dělali za plentou.
+        Pod lístkem uvidíte, jak by se váš hlas rozdělil — a jestli by byl platný.
+      </p>
+    </div>
+
+    <div class="simulator nabihat" id="simulator">
+
+      <div class="simulator__ovladani">
+        <p class="pocitadlo" id="pocitadlo" role="status" aria-live="polite">
+          Rozdáno <strong>0</strong> z 9 hlasů
+        </p>
+        <button type="button" class="tlacitko--male" id="vynulovat">Vymazat lístek</button>
+      </div>
+
+      <div class="listek" id="listek" data-mandaty="9">
+
+        <!-- Kandidátka ODS -->
+        <div class="listek__sloupec" data-strana="ods">
+          <div class="listek__zahlavi">
+            <input class="znacka znacka--strana" type="checkbox" id="s-ods"
+                   aria-label="Označit celou kandidátku ODS">
+            <label class="listek__nazev" for="s-ods">ODS</label>
+          </div>
+
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-1" aria-label="Blahoslav Jírů">
+            <span class="listek__poradi">1.</span>
+            <label for="k-ods-1">Blahoslav Jírů</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-2" aria-label="Jaroslav Souček">
+            <span class="listek__poradi">2.</span>
+            <label for="k-ods-2">Jaroslav Souček</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-3" aria-label="Pavel Honzátko">
+            <span class="listek__poradi">3.</span>
+            <label for="k-ods-3">Pavel Honzátko</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-4" aria-label="Pavel Neset">
+            <span class="listek__poradi">4.</span>
+            <label for="k-ods-4">Pavel Neset</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-5" aria-label="Karel Špína">
+            <span class="listek__poradi">5.</span>
+            <label for="k-ods-5">Karel Špína</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-6" aria-label="Jiří Bambuch">
+            <span class="listek__poradi">6.</span>
+            <label for="k-ods-6">Jiří Bambuch</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-7" aria-label="Kateřina Straková">
+            <span class="listek__poradi">7.</span>
+            <label for="k-ods-7">Kateřina Straková</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-8" aria-label="Jan Urban">
+            <span class="listek__poradi">8.</span>
+            <label for="k-ods-8">Jan Urban</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-ods-9" aria-label="Lenka Rusiňáková">
+            <span class="listek__poradi">9.</span>
+            <label for="k-ods-9">Lenka Rusiňáková</label>
+          </div>
+        </div>
+
+        <!-- Kandidátka SNK -->
+        <div class="listek__sloupec" data-strana="snk">
+          <div class="listek__zahlavi">
+            <input class="znacka znacka--strana" type="checkbox" id="s-snk"
+                   aria-label="Označit celou kandidátku Spolu pro Chotětov a Hřivno">
+            <label class="listek__nazev" for="s-snk">Spolu pro Chotětov a Hřivno</label>
+          </div>
+
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-1" aria-label="Martin Urban">
+            <span class="listek__poradi">1.</span>
+            <label for="k-snk-1">Martin Urban</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-2" aria-label="Vlastimil Weber">
+            <span class="listek__poradi">2.</span>
+            <label for="k-snk-2">Vlastimil Weber</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-3" aria-label="Petr Hůlka">
+            <span class="listek__poradi">3.</span>
+            <label for="k-snk-3">Petr Hůlka</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-4" aria-label="Aleš Bezucha">
+            <span class="listek__poradi">4.</span>
+            <label for="k-snk-4">Aleš Bezucha</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-5" aria-label="Ondřej Stehlík">
+            <span class="listek__poradi">5.</span>
+            <label for="k-snk-5">Ondřej Stehlík</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-6" aria-label="Filip Döme">
+            <span class="listek__poradi">6.</span>
+            <label for="k-snk-6">Filip Döme</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-7" aria-label="Ladislava Kořínková">
+            <span class="listek__poradi">7.</span>
+            <label for="k-snk-7">Ladislava Kořínková</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-8" aria-label="Marie Votočková">
+            <span class="listek__poradi">8.</span>
+            <label for="k-snk-8">Marie Votočková</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-snk-9" aria-label="Martin Celer">
+            <span class="listek__poradi">9.</span>
+            <label for="k-snk-9">Martin Celer</label>
+          </div>
+        </div>
+
+        <!-- Zástupný sloupec, aby šlo předvést panašování a odečítání hlasů -->
+        <div class="listek__sloupec listek__sloupec--ukazka" data-strana="jina">
+          <div class="listek__zahlavi">
+            <input class="znacka znacka--strana" type="checkbox" id="s-jina"
+                   aria-label="Označit celou ukázkovou jinou stranu">
+            <label class="listek__nazev" for="s-jina">Jiná volební strana <em>(ukázka)</em></label>
+          </div>
+
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-1" aria-label="Kandidát A">
+            <span class="listek__poradi">1.</span>
+            <label for="k-jina-1">Kandidát A</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-2" aria-label="Kandidát B">
+            <span class="listek__poradi">2.</span>
+            <label for="k-jina-2">Kandidát B</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-3" aria-label="Kandidát C">
+            <span class="listek__poradi">3.</span>
+            <label for="k-jina-3">Kandidát C</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-4" aria-label="Kandidát D">
+            <span class="listek__poradi">4.</span>
+            <label for="k-jina-4">Kandidát D</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-5" aria-label="Kandidát E">
+            <span class="listek__poradi">5.</span>
+            <label for="k-jina-5">Kandidát E</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-6" aria-label="Kandidát F">
+            <span class="listek__poradi">6.</span>
+            <label for="k-jina-6">Kandidát F</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-7" aria-label="Kandidát G">
+            <span class="listek__poradi">7.</span>
+            <label for="k-jina-7">Kandidát G</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-8" aria-label="Kandidát H">
+            <span class="listek__poradi">8.</span>
+            <label for="k-jina-8">Kandidát H</label>
+          </div>
+          <div class="listek__kandidat">
+            <input class="znacka znacka--kandidat" type="checkbox" id="k-jina-9" aria-label="Kandidát I">
+            <span class="listek__poradi">9.</span>
+            <label for="k-jina-9">Kandidát I</label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="vysledek vysledek--prazdny" id="vysledek" role="status" aria-live="polite"></div>
+
+      <p class="mapa__poznamka">
+        Skutečný hlasovací lístek bude obsahovat všechny kandidátky, které se v městysu
+        registrovaly. Třetí sloupec je zde jen jako ukázka, aby šlo vyzkoušet rozdělení
+        hlasů napříč stranami.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================== Nejčastější chyby -->
+<section class="sekce">
+  <div class="obal">
+
+    <div class="hlavicka-sekce nabihat">
+      <span class="stitek">Pozor na to</span>
+      <h2>Kdy bude hlas neplatný</h2>
+      <div class="podtrzeni"></div>
+      <p>Pět situací, kvůli kterým se váš hlas nepočítá. Všem se dá snadno vyhnout.</p>
+    </div>
+
+    <div class="chyby">
+
+      <div class="chyba nabihat">
+        <span class="chyba__znak" aria-hidden="true">✕</span>
+        <p><strong>Křížek u víc než jedné strany.</strong> V záhlaví smí být označena
+          nejvýše jedna kandidátka. Chcete-li podpořit lidi z více stran, křížkujte jména.</p>
+      </div>
+
+      <div class="chyba nabihat">
+        <span class="chyba__znak" aria-hidden="true">✕</span>
+        <p><strong>Víc než 9 zakřížkovaných jmen.</strong> Volí se devět zastupitelů,
+          takže devět je strop. Méně křížků je v pořádku, více už ne.</p>
+      </div>
+
+      <div class="chyba nabihat">
+        <span class="chyba__znak" aria-hidden="true">✕</span>
+        <p><strong>Prázdný lístek.</strong> Pokud neoznačíte ani stranu, ani žádného
+          kandidáta, hlas se nepočítá.</p>
+      </div>
+
+      <div class="chyba nabihat">
+        <span class="chyba__znak" aria-hidden="true">✕</span>
+        <p><strong>Víc lístků v jedné obálce.</strong> Do úřední obálky patří právě
+          jeden hlasovací lístek.</p>
+      </div>
+
+      <div class="chyba nabihat">
+        <span class="chyba__znak" aria-hidden="true">✕</span>
+        <p><strong>Přetržený lístek nebo jiná obálka.</strong> Lístek netrhejte a použijte
+          výhradně úřední obálku, kterou dostanete od komise.</p>
+      </div>
+
+      <div class="chyba nabihat">
+        <span class="chyba__znak" aria-hidden="true">✕</span>
+        <p><strong>Jiné značky než křížek.</strong> Kolečka, fajfky, podtržení nebo
+          poznámky mohou hlas znehodnotit. Pište jen křížky do čtverečků a rámečků.</p>
+      </div>
+
+    </div>
+
+    <!-- Časté dotazy -->
+    <div class="hlavicka-sekce nabihat" style="margin-top:76px;">
+      <span class="stitek">Časté dotazy</span>
+      <h2>Na co se lidé ptají</h2>
+      <div class="podtrzeni"></div>
+    </div>
+
+    <div class="obal--uzky" style="margin-inline:auto;">
+      <ul class="body" style="list-style:none;">
+
+        <li class="bod nabihat">
+          <details class="detail">
+            <summary>Můžu volit na voličský průkaz, když budu mimo obec?</summary>
+            <div class="detail__obsah">
+              <p>
+                Ne. V komunálních volbách se voličský průkaz nevydává. Zastupitele si volí
+                občané v obci svého trvalého pobytu, takže hlasovat můžete jen ve volebním
+                okrsku, kam podle trvalého bydliště spadáte.
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <li class="bod nabihat">
+          <details class="detail">
+            <summary>Musím rozdat všech devět křížků?</summary>
+            <div class="detail__obsah">
+              <p>
+                Nemusíte. Devět je maximum, ne povinnost. Když zakřížkujete třeba jen tři
+                lidi, hlas je platný a dostanou ho právě ti tři. Nevyužité křížky nikomu
+                neuškodí ani nepomohou.
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <li class="bod nabihat">
+          <details class="detail">
+            <summary>Jak podpořím obě vaše kandidátky najednou?</summary>
+            <div class="detail__obsah">
+              <p>
+                Nekřížkujte žádné záhlaví a místo toho zakřížkujte devět konkrétních jmen
+                z obou našich listin v libovolném poměru. Kdybyste označili záhlaví jedné
+                z nich a k tomu jména z té druhé, hlasy by se první kandidátce odečetly
+                a na její poslední kandidáty by nezbylo.
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <li class="bod nabihat">
+          <details class="detail">
+            <summary>Co když zakřížkuju stranu i její vlastní kandidáty?</summary>
+            <div class="detail__obsah">
+              <p>
+                Nic se nestane, hlas zůstává platný. K označení jednotlivých kandidátů
+                té strany, kterou jste zakřížkovali v záhlaví, se prostě nepřihlíží —
+                hlas jim už dala samotná strana.
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <li class="bod nabihat">
+          <details class="detail">
+            <summary>Nedorazil mi hlasovací lístek. Co teď?</summary>
+            <div class="detail__obsah">
+              <p>
+                Nevadí, nové lístky dostanete přímo ve volební místnosti od okrskové
+                volební komise. Stačí si o ně říct.
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <li class="bod nabihat">
+          <details class="detail">
+            <summary>Nemůžu se ze zdravotních důvodů dostavit. Jde volit z domova?</summary>
+            <div class="detail__obsah">
+              <p>
+                Ano. Ze závažných, zejména zdravotních důvodů můžete požádat obecní úřad
+                nebo v den voleb přímo okrskovou volební komisi o přenosnou volební schránku.
+                Komise za vámi přijede, ale pouze v rámci vašeho volebního okrsku.
+              </p>
+            </div>
+          </details>
+        </li>
+
+      </ul>
+    </div>
+
+    <p style="text-align:center; margin-top:52px;" class="nabihat">
+      <a class="tlacitko tlacitko--modre" href="kandidati.html">
+        Poznat naše kandidáty
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </p>
+
+    <p class="mapa__poznamka" style="text-align:center; max-width:640px; margin:26px auto 0;">
+      Informace vycházejí ze zákona č. 491/2001 Sb., o volbách do zastupitelstev obcí,
+      a z metodiky Ministerstva vnitra. V případě pochybností se obraťte na obecní úřad.
+    </p>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================= Patička -->
+<footer class="paticka">
+  <div class="obal">
+
+    <div class="paticka__mrizka">
+      <div>
+        <p class="paticka__logo">SPO<span>LU</span></p>
+        <p>
+          Kandidátní listiny ODS a SNK „Spolu pro Chotětov a Hřivno" pro komunální volby
+          do zastupitelstva městyse Chotětov ve dnech 9. a 10. října 2026.
+        </p>
+      </div>
+
+      <div>
+        <h4>Obsah</h4>
+        <ul>
+          <li><a href="index.html#vysledky">Co jsme udělali</a></li>
+          <li><a href="program.html">Celý program</a></li>
+          <li><a href="kandidati.html">Kandidáti</a></li>
+          <li><a href="jak-volit.html">Jak volit</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Ke stažení</h4>
+        <ul>
+          <li><a href="dokumenty/volebni-program-2026.pdf" download>Volební brožura (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paticka__spodek">
+      <p>© 2026 SPOLU pro Chotětov, Hřivno a ODS</p>
+      <p>Vrátíme obci slušnost, respekt a odpovědnost</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/volebni-listek.js"></script>
+</body>
+</html>

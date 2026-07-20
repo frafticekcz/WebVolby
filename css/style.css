@@ -1290,6 +1290,495 @@ p:last-child { margin-bottom: 0; }
 .upozorneni p { color: #5B4A20; font-size: .98rem; }
 
 /* ==========================================================================
+   Stránka „Jak volit"
+   ========================================================================== */
+
+/* Rychlá fakta – kdy, kde, co s sebou, kolik křížků */
+.fakta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 68px;
+}
+
+.fakt {
+  background: #fff;
+  border: 1px solid var(--seda-linka);
+  border-radius: var(--radius-velky);
+  padding: 26px 22px;
+  text-align: center;
+  box-shadow: var(--stin-jemny);
+}
+.fakt__ikona {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--modra-jemna);
+  display: grid;
+  place-items: center;
+}
+.fakt__nazev {
+  font-family: var(--font-nadpis);
+  font-weight: 600;
+  font-size: .76rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--seda-text);
+  margin-bottom: 8px;
+}
+.fakt__hodnota {
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: 1.06rem;
+  color: var(--modra);
+  line-height: 1.4;
+}
+.fakt__hodnota small {
+  display: block;
+  font-weight: 400;
+  font-size: .86rem;
+  color: var(--seda-text);
+  margin-top: 4px;
+}
+
+/* Postup krok za krokem */
+.kroky {
+  list-style: none;
+  counter-reset: krok;
+  margin: 0 0 68px;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+.krok {
+  counter-increment: krok;
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--seda-linka);
+  border-radius: var(--radius-velky);
+  padding: 24px 26px 24px 88px;
+  box-shadow: var(--stin-jemny);
+}
+.krok::before {
+  content: counter(krok);
+  position: absolute;
+  left: 24px;
+  top: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--modra);
+  color: #fff;
+  font-family: var(--font-nadpis);
+  font-weight: 800;
+  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+}
+.krok h3 { font-size: 1.12rem; margin-bottom: 6px; }
+.krok p  { color: #3A4256; font-size: .98rem; }
+
+/* Tři způsoby hlasování */
+.zpusoby {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 24px;
+}
+.zpusob {
+  background: #fff;
+  border: 1px solid var(--seda-linka);
+  border-top: 4px solid var(--modra);
+  border-radius: var(--radius-velky);
+  padding: 26px 24px;
+  box-shadow: var(--stin-jemny);
+}
+.zpusob--doporuceny { border-top-color: var(--cervena); }
+.zpusob__stitek {
+  display: inline-block;
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--cervena);
+  padding: 5px 11px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.zpusob h3 { font-size: 1.12rem; margin-bottom: 10px; }
+.zpusob p  { font-size: .96rem; color: #3A4256; }
+
+/* ------------------------------------------- Interaktivní hlasovací lístek */
+.simulator {
+  background: #fff;
+  border: 1px solid var(--seda-linka);
+  border-radius: var(--radius-velky);
+  padding: 28px;
+  box-shadow: var(--stin);
+}
+
+.listek {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.listek__sloupec {
+  border: 2px solid var(--modra);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+}
+.listek__sloupec--ukazka { border-color: var(--seda-text); opacity: .82; }
+
+.listek__zahlavi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  background: var(--modra-jemna);
+  border-bottom: 2px solid var(--modra);
+}
+.listek__sloupec--ukazka .listek__zahlavi {
+  background: var(--seda-svetla);
+  border-bottom-color: var(--seda-text);
+}
+.listek__nazev {
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: .88rem;
+  color: var(--modra);
+  line-height: 1.25;
+}
+.listek__sloupec--ukazka .listek__nazev { color: var(--seda-text); }
+
+.listek__kandidat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-size: .88rem;
+  border-top: 1px solid var(--seda-linka);
+}
+.listek__kandidat:first-of-type { border-top: 0; }
+
+/* Kandidát, kterému v aktuálním nastavení připadne hlas */
+.listek__kandidat.ma-hlas {
+  background: #EAF6EC;
+  font-weight: 700;
+  color: #1B5E20;
+}
+.listek__poradi { color: var(--seda-text); font-variant-numeric: tabular-nums; }
+
+/* Čtvereček u strany a rámeček u kandidáta – vizuálně jako na lístku */
+.znacka {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--modra);
+  background: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: background-color var(--prechod);
+}
+.znacka:hover { background: var(--modra-jemna); }
+.znacka:checked::after {
+  content: "✕";
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--cervena);
+}
+.znacka--strana { width: 26px; height: 26px; border-width: 3px; }
+.listek__sloupec--ukazka .znacka { border-color: var(--seda-text); }
+
+/* Ignorované značky (kandidát u strany, která je zakřížkovaná v záhlaví) */
+.listek__kandidat.ignorovano { opacity: .45; text-decoration: line-through; }
+
+/* Výsledek simulace */
+.vysledek {
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  border-left: 5px solid var(--modra);
+  background: var(--modra-jemna);
+}
+.vysledek--chyba { border-left-color: var(--cervena); background: var(--cervena-jemna); }
+.vysledek--prazdny { border-left-color: var(--seda-text); background: var(--seda-svetla); }
+
+.vysledek__nadpis {
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--modra);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.vysledek--chyba .vysledek__nadpis { color: var(--cervena); }
+.vysledek p { font-size: .97rem; color: #3A4256; }
+.vysledek ul { margin: 10px 0 0; padding-left: 20px; font-size: .95rem; color: #3A4256; }
+.vysledek li { margin-bottom: 5px; }
+
+.simulator__ovladani {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.pocitadlo {
+  font-family: var(--font-nadpis);
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--modra);
+}
+.pocitadlo strong { font-size: 1.25rem; }
+.pocitadlo.je-prekroceno { color: var(--cervena); }
+
+.tlacitko--male {
+  padding: 9px 18px;
+  font-size: .88rem;
+  border: 2px solid var(--seda-linka);
+  background: #fff;
+  color: var(--seda-text);
+  border-radius: 999px;
+  font-family: var(--font-nadpis);
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--prechod), color var(--prechod);
+}
+.tlacitko--male:hover { border-color: var(--modra); color: var(--modra); }
+
+/* Nejčastější chyby */
+.chyby { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.chyba {
+  display: flex;
+  gap: 14px;
+  background: var(--cervena-jemna);
+  border: 1px solid #F5C6C6;
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.chyba__znak {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--cervena);
+  color: #fff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+}
+.chyba p { font-size: .95rem; color: #5B2020; }
+
+/* ==========================================================================
+   Mapa projektů
+   ========================================================================== */
+.mapa {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.mapa__schema {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--seda-linka);
+  border-radius: var(--radius-velky);
+  box-shadow: var(--stin-jemny);
+  padding: 10px;
+  overflow: hidden;
+}
+.mapa__schema svg { width: 100%; height: auto; display: block; }
+
+/* Špendlík – pozice se nastavuje inline přes --x a --y v procentech */
+.pin {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  background: var(--modra);
+  color: #fff;
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: .82rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .28);
+  transition: transform var(--prechod), background-color var(--prechod);
+}
+.pin:hover,
+.pin.je-aktivni { background: var(--cervena); transform: translate(-50%, -50%) scale(1.22); }
+.pin--hrivno { background: var(--modra-svetla); }
+
+.mapa__poznamka {
+  font-size: .86rem;
+  color: var(--seda-text);
+  font-style: italic;
+  margin-top: 12px;
+}
+
+.mapa__seznam { list-style: none; margin: 0; padding: 0; }
+.mapa__seznam li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 13px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: background-color var(--prechod), border-color var(--prechod);
+}
+.mapa__seznam li.je-aktivni {
+  background: #fff;
+  border-color: var(--cervena);
+  box-shadow: var(--stin-jemny);
+}
+.mapa__cislo {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--modra);
+  color: #fff;
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: .8rem;
+  display: grid;
+  place-items: center;
+}
+.mapa__cislo--hrivno { background: var(--modra-svetla); }
+.mapa__nazev { font-weight: 700; font-size: .97rem; color: var(--text); }
+.mapa__obec {
+  display: block;
+  font-weight: 400;
+  font-size: .84rem;
+  color: var(--seda-text);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   Profily kandidátů (podstránka)
+   ========================================================================== */
+.profil {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
+  background: #fff;
+  border: 1px solid var(--seda-linka);
+  border-radius: var(--radius-velky);
+  padding: 26px;
+  box-shadow: var(--stin-jemny);
+  margin-bottom: 20px;
+  scroll-margin-top: calc(var(--hlavicka) + 20px);
+}
+.profil--lidr { border-color: var(--cervena); }
+
+.profil__foto {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  align-self: start;
+}
+.profil__foto img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+
+.profil__poradi {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border-radius: 9px;
+  background: var(--modra);
+  color: #fff;
+  font-family: var(--font-nadpis);
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .22);
+}
+.profil--snk .profil__poradi { background: var(--modra-svetla); }
+
+.profil__jmeno { font-size: 1.4rem; margin-bottom: 4px; }
+.profil__udaje {
+  font-family: var(--font-nadpis);
+  font-weight: 500;
+  color: var(--seda-text);
+  font-size: .95rem;
+  margin-bottom: 16px;
+}
+.profil__citat {
+  border-left: 4px solid var(--cervena);
+  padding: 2px 0 2px 16px;
+  margin: 0 0 16px;
+  font-family: var(--font-nadpis);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.04rem;
+  color: var(--modra);
+  line-height: 1.45;
+}
+.profil__text p { font-size: .98rem; color: #3A4256; }
+
+/* ==========================================================================
+   Kontakt
+   ========================================================================== */
+.kontakty {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 34px;
+}
+.kontakt-karta {
+  background: #fff;
+  border: 1px solid var(--seda-linka);
+  border-radius: var(--radius-velky);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--stin-jemny);
+  transition: transform var(--prechod), box-shadow var(--prechod);
+}
+.kontakt-karta:hover { transform: translateY(-4px); box-shadow: var(--stin); }
+.kontakt-karta__ikona {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--modra-jemna);
+  display: grid;
+  place-items: center;
+}
+.kontakt-karta h3 { font-size: 1.08rem; margin-bottom: 8px; }
+.kontakt-karta p { font-size: .95rem; color: var(--seda-text); margin-bottom: 12px; }
+.kontakt-karta a {
+  font-family: var(--font-nadpis);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--modra);
+  text-decoration: none;
+  word-break: break-word;
+}
+.kontakt-karta a:hover { color: var(--cervena); text-decoration: underline; }
+
+/* ==========================================================================
    Animace při scrollu
    ========================================================================== */
 /* Skrývá se jen tehdy, když běží JavaScript, který obsah zase odhalí.
@@ -1308,6 +1797,10 @@ p:last-child { margin-bottom: 0; }
   .paticka__mrizka { grid-template-columns: 1fr 1fr; gap: 32px; }
   .blok__sloupce   { grid-template-columns: 1fr; }
   .oblasti         { grid-template-columns: 1fr; }
+  .fakta           { grid-template-columns: repeat(2, 1fr); }
+  .zpusoby         { grid-template-columns: 1fr; }
+  .mapa            { grid-template-columns: 1fr; }
+  .kontakty        { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
@@ -1360,6 +1853,21 @@ p:last-child { margin-bottom: 0; }
 
   .paticka__mrizka { grid-template-columns: 1fr; gap: 28px; }
   .paticka__spodek { flex-direction: column; }
+
+  .simulator { padding: 18px 14px; }
+  .chyby     { grid-template-columns: 1fr; }
+  .krok      { padding: 20px 20px 20px 74px; }
+  .krok::before { left: 18px; top: 18px; width: 40px; height: 40px; font-size: 1.05rem; }
+
+  .profil { grid-template-columns: 1fr; gap: 20px; }
+  .profil__foto { max-width: 200px; }
+}
+
+/* Na mobilu se tři sloupce lístku vedle sebe nevejdou čitelně,
+   proto je skládáme pod sebe – logika hlasování zůstává stejná. */
+@media (max-width: 700px) {
+  .listek  { grid-template-columns: 1fr; }
+  .fakta   { grid-template-columns: 1fr; }
 }
 
 /* Na úzkých displejích ať jsou obě listiny stejně široká tlačítka pod sebou —

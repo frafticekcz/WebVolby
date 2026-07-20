@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kandidáti 2026 — SPOLU pro Chotětov, Hřivno a ODS</title>
+<meta name="description" content="Osmnáct kandidátů na dvou listinách — ODS a SNK Spolu pro Chotětov a Hřivno. Kdo jsme a proč kandidujeme do zastupitelstva městyse Chotětov.">
+<meta name="theme-color" content="#002A7D">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kandidáti 2026 — SPOLU pro Chotětov, Hřivno a ODS">
+<meta property="og:description" content="Osmnáct lidí, kteří chtějí pracovat pro Chotětov a Hřivno.">
+<meta property="og:locale" content="cs_CZ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+<!-- Náběhové animace se zapnou jen tam, kde je JavaScript k dispozici -->
+<script>document.documentElement.className += " js";</script>
+</head>
+
+<body>
+<a class="preskocit" href="#obsah">Přeskočit na obsah</a>
+
+<!-- ============================================================ Navigace -->
+<header class="hlavicka" id="hlavicka">
+  <div class="hlavicka__obal">
+
+    <a class="logo" href="index.html" aria-label="SPOLU pro Chotětov, Hřivno a ODS – domovská stránka">
+      <svg class="logo__znak" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="6" y="6" width="88" height="88" rx="10" fill="none" stroke="#002A7D" stroke-width="10"/>
+        <path d="M25 52l17 19 35-42" stroke="#CF0000" stroke-width="13" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="logo__text">SPO<span>LU</span></span>
+        <span class="logo__pod">Chotětov &amp; Hřivno 2026</span>
+      </span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Otevřít menu"
+            aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="menu" id="menu" aria-label="Hlavní navigace">
+      <a href="index.html#vysledky">Co jsme udělali</a>
+      <a href="program.html">Program</a>
+      <a href="kandidati.html" class="je-aktivni" aria-current="page">Kandidáti</a>
+      <a href="jak-volit.html">Jak volit</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a class="tlacitko tlacitko--cervene menu__cta" href="jak-volit.html">Jdu volit</a>
+    </nav>
+
+    <div class="ukazatel" id="ukazatel" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="obsah">
+
+<!-- ========================================================= Podhlavička -->
+<section class="podhlavicka">
+  <div class="obal">
+    <nav class="drobecky" aria-label="Drobečková navigace">
+      <a href="index.html">Úvod</a> &nbsp;/&nbsp; Kandidáti
+    </nav>
+    <h1>Osmnáct lidí pro Chotětov a Hřivno</h1>
+    <p>
+      Dvě kandidátní listiny, na kterých najdete zkušené a ostřílené kandidáty
+      i nové tváře mající chuť učit se novým věcem.
+    </p>
+  </div>
+
+  <svg class="vlny vlny--dole" viewBox="0 0 1440 80" preserveAspectRatio="none"
+       height="80" aria-hidden="true" focusable="false">
+    <path d="M0,44 C260,6 460,72 720,32 C980,-8 1200,58 1440,20 L1440,80 L0,80 Z" fill="#FFFFFF"/>
+  </svg>
+</section>
+
+<section class="sekce" style="padding-top:56px;">
+  <div class="obal">
+
+    <nav class="rejstrik nabihat" aria-label="Přechod na kandidátní listinu">
+      <a href="#listina-ods">Kandidátka ODS</a>
+      <a href="#listina-snk">Kandidátka SNK Spolu pro Chotětov a Hřivno</a>
+    </nav>
+
+    <!-- ==================================================================
+         PROSTOR PRO PŘEDSTAVENÍ KANDIDÁTŮ
+
+         U každého kandidáta jsou připravené dva bloky k doplnění:
+
+         1. <blockquote class="profil__citat"> — jedna až dvě věty vlastními
+            slovy, typicky odpověď na „proč kandiduji". Tohle je ze všeho
+            nejúčinnější; klidně to od kandidátů poberte i po telefonu.
+
+         2. <div class="profil__text"> — delší představení: odkud je,
+            co dělá, co ho v obci pálí, čemu by se chtěl v zastupitelstvu
+            věnovat. Klidně několik odstavců <p>.
+
+         Text s třídou "chybi" je zástupný — až budou podklady hotové,
+         neměla by tahle třída zůstat nikde na stránce.
+         ================================================================== -->
+
+    <!-- ======================================================= Listina ODS -->
+    <div class="blok" id="listina-ods">
+      <div class="blok__hlavicka">
+        <h2>Kandidátka ODS</h2>
+      </div>
+
+      <article class="profil profil--lidr nabihat" id="jiru">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-1-jiru.jpeg" alt="Blahoslav Jírů" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">1.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Blahoslav Jírů</h3>
+          <p class="profil__udaje">66 let, podnikatel &nbsp;·&nbsp; lídr kandidátky</p>
+          <blockquote class="profil__citat">
+            „Funkci starosty jsem choval ve velké úctě a po celou dobu jejího výkonu jsem
+            k ní přistupoval vždy odpovědně a s respektem."
+          </blockquote>
+          <div class="profil__text">
+            <p>
+              Ve vedení městyse působím již 4. volební období, v letech 2011 až 2022 na pozici
+              starosty. V nadcházejících volbách kandiduji jako lídr kandidátky ODS bez politické
+              příslušnosti. Vzhledem ke svému věku budu rád, pokud se nám povede vychovat nové
+              mladší perspektivní tváře, kterým předám své zkušenosti z dlouholetého působení
+              ve vedení městyse.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil nabihat" id="soucek">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-2-soucek.jpeg" alt="Jaroslav Souček" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">2.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Jaroslav Souček</h3>
+          <p class="profil__udaje">56 let, vedoucí interní logistiky</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil nabihat" id="honzatko">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-3-honzatko.jpeg" alt="Pavel Honzátko" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">3.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Pavel Honzátko</h3>
+          <p class="profil__udaje">48 let, kontrolor</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil nabihat" id="neset">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-4-neset.jpeg" alt="Pavel Neset" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">4.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Mgr. Pavel Neset, Ph.D.</h3>
+          <p class="profil__udaje">56 let, vysokoškolský pedagog</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil nabihat" id="spina">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-5-spina.jpeg" alt="Karel Špína" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">5.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Karel Špína</h3>
+          <p class="profil__udaje">64 let, podnikatel</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil nabihat" id="bambuch">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-6-bambuch.jpeg" alt="Jiří Bambuch" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">6.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Jiří Bambuch</h3>
+          <p class="profil__udaje">47 let, podnikatel</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil nabihat" id="strakova">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-7-strakova.jpeg" alt="Kateřina Straková" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">7.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Kateřina Straková</h3>
+          <p class="profil__udaje">52 let, specialista odbytu</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidátky zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil nabihat" id="urban-jan">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-8-urban-jan.jpeg" alt="Jan Urban" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">8.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Jan Urban</h3>
+          <p class="profil__udaje">48 let, operátor logistiky</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil nabihat" id="rusinakova">
+        <div class="profil__foto">
+          <img src="img/kandidati/ods-9-rusinakova.jpeg" alt="Lenka Rusiňáková" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">9.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Lenka Rusiňáková</h3>
+          <p class="profil__udaje">64 let, důchodce</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidátky zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ======================================================= Listina SNK -->
+    <div class="blok" id="listina-snk">
+      <div class="blok__hlavicka">
+        <h2>Kandidátka SNK Spolu pro Chotětov a Hřivno</h2>
+      </div>
+
+      <article class="profil profil--snk profil--lidr nabihat" id="urban-martin">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-1-urban-martin.jpeg" alt="Martin Urban" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">1.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Martin Urban</h3>
+          <p class="profil__udaje">52 let, řidič &nbsp;·&nbsp; lídr kandidátky</p>
+          <blockquote class="profil__citat">
+            „Od dětství jsem byl veden k úctě k ostatním lidem, slušnosti, upřímnosti
+            a pravdomluvnosti."
+          </blockquote>
+          <div class="profil__text">
+            <p>
+              Své působení v zastupitelstvu městyse Chotětov jsem poprvé započal v roce 2014.
+              Mandát zastupitele vykonávám již 3 volební období s velkou pokorou a respektem.
+              V nadcházejících volbách kandiduji jako lídr sdružení nezávislých kandidátů
+              a rád bych, aby se do vedení městyse dostali zodpovědní a pracovití lidé,
+              pro které bude prospěch obou obcí důležitý.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil profil--snk nabihat" id="weber">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-2-weber.jpeg" alt="Vlastimil Weber" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">2.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Ing. Vlastimil Weber</h3>
+          <p class="profil__udaje">50 let, embryolog</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil profil--snk nabihat" id="hulka">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-3-hulka.jpeg" alt="Petr Hůlka" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">3.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Petr Hůlka</h3>
+          <p class="profil__udaje">43 let, nákupčí</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil profil--snk nabihat" id="bezucha">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-4-bezucha.jpeg" alt="Aleš Bezucha" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">4.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Mgr. Aleš Bezucha</h3>
+          <p class="profil__udaje">55 let, podnikatel</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil profil--snk nabihat" id="stehlik">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-5-stehlik.jpeg" alt="Ondřej Stehlík" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">5.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Ondřej Stehlík</h3>
+          <p class="profil__udaje">41 let, VS ČR</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil profil--snk nabihat" id="dome">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-6-dome.jpeg" alt="Filip Döme" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">6.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Filip Döme</h3>
+          <p class="profil__udaje">39 let, prodejce velkoobchod</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil profil--snk nabihat" id="korinkova">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-7-korinkova.jpeg" alt="Ladislava Kořínková" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">7.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Ladislava Kořínková</h3>
+          <p class="profil__udaje">59 let, referent expedice</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidátky zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil profil--snk nabihat" id="votockova">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-8-votockova.jpeg" alt="Marie Votočková" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">8.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Mgr. Marie Votočková</h3>
+          <p class="profil__udaje">43 let, úřednice</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidátky zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="profil profil--snk nabihat" id="celer">
+        <div class="profil__foto">
+          <img src="img/kandidati/snk-9-celer.jpeg" alt="Martin Celer" width="297" height="297" loading="lazy">
+          <span class="profil__poradi">9.</span>
+        </div>
+        <div>
+          <h3 class="profil__jmeno">Martin Celer</h3>
+          <p class="profil__udaje">46 let, vedoucí údržby</p>
+          <blockquote class="profil__citat chybi">Doplníme citát — proč kandiduji.</blockquote>
+          <div class="profil__text">
+            <p class="chybi">Představení kandidáta zatím připravujeme.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="volby nabihat" style="margin-top:64px;">
+      <p class="volby__popis">
+        Chcete podpořit obě kandidátky zároveň? Podívejte se, jak správně rozdělit
+        svých devět křížků.
+      </p>
+      <div class="hero__tlacitka" style="margin-bottom:0;">
+        <a class="tlacitko tlacitko--cervene" href="jak-volit.html">Jak správně volit</a>
+        <a class="tlacitko tlacitko--obrys" href="program.html">Přečíst program</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================= Patička -->
+<footer class="paticka">
+  <div class="obal">
+
+    <div class="paticka__mrizka">
+      <div>
+        <p class="paticka__logo">SPO<span>LU</span></p>
+        <p>
+          Kandidátní listiny ODS a SNK „Spolu pro Chotětov a Hřivno" pro komunální volby
+          do zastupitelstva městyse Chotětov ve dnech 9. a 10. října 2026.
+        </p>
+      </div>
+
+      <div>
+        <h4>Obsah</h4>
+        <ul>
+          <li><a href="index.html#vysledky">Co jsme udělali</a></li>
+          <li><a href="program.html">Celý program</a></li>
+          <li><a href="kandidati.html">Kandidáti</a></li>
+          <li><a href="jak-volit.html">Jak volit</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Ke stažení</h4>
+        <ul>
+          <li><a href="dokumenty/volebni-program-2026.pdf" download>Volební brožura (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paticka__spodek">
+      <p>© 2026 SPOLU pro Chotětov, Hřivno a ODS</p>
+      <p>Vrátíme obci slušnost, respekt a odpovědnost</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
