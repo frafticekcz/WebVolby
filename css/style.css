@@ -710,6 +710,20 @@ p:last-child { margin-bottom: 0; }
 }
 .oblast__odkaz:hover { gap: 12px; color: var(--cervena); }
 
+/* Karta Hřivno přes celou šířku mřížky, se seznamem ve dvou sloupcích.
+   Číslo dostane odlišný odstín, kterým se Hřivno značí i na mapě. */
+.oblast--sirka { grid-column: 1 / -1; }
+.oblast--sirka .oblast__cislo { background: var(--modra-svetla); color: #fff; }
+.oblast--sirka:hover .oblast__cislo { background: var(--modra); }
+
+@media (min-width: 561px) {
+  .oblast__seznam--dva {
+    columns: 2;
+    column-gap: 30px;
+  }
+  .oblast__seznam--dva li { break-inside: avoid; }
+}
+
 /* ==========================================================================
    Kandidáti
    ========================================================================== */
@@ -1165,34 +1179,86 @@ p:last-child { margin-bottom: 0; }
 
 .detail__obsah {
   margin: 14px 0 4px;
-  padding: 18px 20px;
+  padding: 22px 24px;
   background: var(--seda-svetla);
   border-radius: var(--radius);
   border-left: 4px solid var(--modra-svetla);
   font-weight: 400;
 }
-.detail__obsah p { font-size: .95rem; color: #3A4256; }
+.detail__obsah > :first-child { margin-top: 0; }
+.detail__obsah > :last-child { margin-bottom: 0; }
+.detail__obsah p { font-size: .96rem; color: #3A4256; line-height: 1.6; }
 
-/* Parametry záměru – náklady, termín, postup */
+/* Parametry záměru (kde, náklady, termín…) jako přehledné boxíky nahoře.
+   auto-fit → počet sloupců se sám přizpůsobí šířce i počtu položek. */
+.detail__meta,
 .parametry {
-  margin: 0;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 12px;
+  margin: 0 0 20px;
 }
+.detail__meta > div,
 .parametry > div {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 4px 16px;
+  background: #fff;
+  border: 1px solid var(--seda-linka);
+  border-radius: 10px;
+  padding: 12px 15px;
 }
+.detail__meta dt,
 .parametry dt {
   font-family: var(--font-nadpis);
   font-weight: 600;
-  font-size: .78rem;
-  letter-spacing: .08em;
+  font-size: .68rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--modra);
+  color: var(--seda-text);
+  margin-bottom: 5px;
 }
-.parametry dd { margin: 0; font-size: .95rem; color: #3A4256; }
+.detail__meta dd,
+.parametry dd {
+  margin: 0;
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--modra);
+  line-height: 1.3;
+}
+
+/* Textová sekce v detailu — nadpis s barevným proužkem a text pod ním */
+.detail__sekce { margin-top: 20px; }
+.detail__sekce h4 {
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: .96rem;
+  color: var(--modra);
+  margin: 0 0 7px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.detail__sekce h4::before {
+  content: "";
+  width: 5px;
+  height: 17px;
+  border-radius: 3px;
+  background: var(--cervena);
+  flex-shrink: 0;
+}
+.detail__sekce p { margin: 0 0 9px; }
+.detail__sekce ul { margin: 7px 0 0; padding-left: 20px; }
+.detail__sekce li { font-size: .95rem; color: #3A4256; line-height: 1.55; margin-bottom: 5px; }
+
+/* Upozornění, že jde jen o ukázkový vzorový text */
+.detail__ukazka {
+  background: #FFF8E6;
+  border: 1px solid #F0D48A;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: .86rem !important;
+  color: #8A6200 !important;
+  margin: 0 0 18px !important;
+}
 
 /* Zvýraznění dosud nedoplněného textu – ve zveřejněné verzi
    by se tato třída už neměla nikde vyskytovat. */
@@ -1200,10 +1266,6 @@ p:last-child { margin-bottom: 0; }
   color: var(--seda-text);
   font-style: italic;
   font-size: .93rem;
-}
-
-@media (max-width: 560px) {
-  .parametry > div { grid-template-columns: 1fr; }
 }
 
 /* Vnořený seznam */
@@ -1296,7 +1358,7 @@ p:last-child { margin-bottom: 0; }
 /* Rychlá fakta – kdy, kde, co s sebou, kolik křížků */
 .fakta {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-bottom: 68px;
 }
@@ -1395,19 +1457,6 @@ p:last-child { margin-bottom: 0; }
   box-shadow: var(--stin-jemny);
 }
 .zpusob--doporuceny { border-top-color: var(--cervena); }
-.zpusob__stitek {
-  display: inline-block;
-  font-family: var(--font-nadpis);
-  font-weight: 700;
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--cervena);
-  padding: 5px 11px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-}
 .zpusob h3 { font-size: 1.12rem; margin-bottom: 10px; }
 .zpusob p  { font-size: .96rem; color: #3A4256; }
 

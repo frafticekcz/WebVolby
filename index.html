@@ -18,7 +18,7 @@
 <!-- Značka ?v=... za odkazy na CSS a JS zajišťuje, že po úpravě uvidí
      návštěvníci novou verzi místo staré z mezipaměti. Nepřepisujte ji ručně —
      před nahráním webu spusťte `python verze.py`, viz README.md. -->
-<link rel="stylesheet" href="css/style.css?v=2026-07-20-2215">
+<link rel="stylesheet" href="css/style.css?v=2026-07-20-2248">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
 <!-- Náběhové animace se zapnou jen tam, kde je JavaScript k dispozici -->
@@ -52,9 +52,7 @@
     <nav class="menu" id="menu" aria-label="Hlavní navigace">
       <a href="#vysledky">Co jsme udělali</a>
       <a href="#program">Program</a>
-      <a href="mapa.html">Mapa projektů</a>
       <a href="#kandidati">Kandidáti</a>
-      <a href="jak-volit.html">Jak volit</a>
       <a href="#kontakt">Kontakt</a>
       <a class="tlacitko tlacitko--cervene menu__cta" href="jak-volit.html">Jdu volit</a>
     </nav>
@@ -413,6 +411,24 @@
         </a>
       </article>
 
+      <article class="oblast oblast--sirka nabihat">
+        <div class="oblast__cislo">9</div>
+        <h3 class="oblast__nazev">Hřivno</h3>
+        <ul class="oblast__seznam oblast__seznam--dva">
+          <li>Hřivenský plácek — nové víceúčelové a dětské hřiště se zázemím</li>
+          <li>Obnova a oprava chodníků po etapách</li>
+          <li>Studie komunitního a společenského centra u č. p. 15</li>
+          <li>Prosazení rekonstrukce silnice Hřivno – Zdětín s krajem</li>
+        </ul>
+        <a class="oblast__odkaz" href="program.html#hrivno">
+          Zobrazit detail
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
     </div>
 
     <p style="text-align:center; margin-top:48px;" class="nabihat">
@@ -479,7 +495,7 @@
 
       <article class="kandidat kandidat--lidr nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-1-jiru.jpeg" alt="Blahoslav Jírů" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-1-jiru.jpeg" alt="Blahoslav Jírů" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">1.</span>
           <span class="kandidat__lidr">Lídr</span>
         </div>
@@ -491,7 +507,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-2-soucek.jpeg" alt="Jaroslav Souček" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-2-soucek.jpeg" alt="Jaroslav Souček" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">2.</span>
         </div>
         <div class="kandidat__telo">
@@ -502,7 +518,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-3-honzatko.jpeg" alt="Pavel Honzátko" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-3-honzatko.jpeg" alt="Pavel Honzátko" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">3.</span>
         </div>
         <div class="kandidat__telo">
@@ -513,7 +529,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-4-neset.jpeg" alt="Pavel Neset" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-4-neset.jpeg" alt="Pavel Neset" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">4.</span>
         </div>
         <div class="kandidat__telo">
@@ -524,7 +540,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-5-spina.jpeg" alt="Karel Špína" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-5-spina.jpeg" alt="Karel Špína" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">5.</span>
         </div>
         <div class="kandidat__telo">
@@ -535,7 +551,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-6-bambuch.jpeg" alt="Jiří Bambuch" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-6-bambuch.jpeg" alt="Jiří Bambuch" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">6.</span>
         </div>
         <div class="kandidat__telo">
@@ -546,7 +562,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-7-strakova.jpeg" alt="Kateřina Straková" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-7-strakova.jpeg" alt="Kateřina Straková" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">7.</span>
         </div>
         <div class="kandidat__telo">
@@ -557,7 +573,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-8-urban-jan.jpeg" alt="Jan Urban" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-8-urban-jan.jpeg" alt="Jan Urban" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">8.</span>
         </div>
         <div class="kandidat__telo">
@@ -568,7 +584,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/ods-9-rusinakova.jpeg" alt="Lenka Rusiňáková" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/ods-9-rusinakova.jpeg" alt="Lenka Rusiňáková" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">9.</span>
         </div>
         <div class="kandidat__telo">
@@ -585,7 +601,7 @@
 
       <article class="kandidat kandidat--lidr nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-1-urban-martin.jpeg" alt="Martin Urban" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-1-urban-martin.jpeg" alt="Martin Urban" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">1.</span>
           <span class="kandidat__lidr">Lídr</span>
         </div>
@@ -597,7 +613,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-2-weber.jpeg" alt="Vlastimil Weber" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-2-weber.jpeg" alt="Vlastimil Weber" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">2.</span>
         </div>
         <div class="kandidat__telo">
@@ -608,7 +624,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-3-hulka.jpeg" alt="Petr Hůlka" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-3-hulka.jpeg" alt="Petr Hůlka" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">3.</span>
         </div>
         <div class="kandidat__telo">
@@ -619,7 +635,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-4-bezucha.jpeg" alt="Aleš Bezucha" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-4-bezucha.jpeg" alt="Aleš Bezucha" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">4.</span>
         </div>
         <div class="kandidat__telo">
@@ -630,7 +646,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-5-stehlik.jpeg" alt="Ondřej Stehlík" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-5-stehlik.jpeg" alt="Ondřej Stehlík" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">5.</span>
         </div>
         <div class="kandidat__telo">
@@ -641,7 +657,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-6-dome.jpeg" alt="Filip Döme" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-6-dome.jpeg" alt="Filip Döme" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">6.</span>
         </div>
         <div class="kandidat__telo">
@@ -652,7 +668,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-7-korinkova.jpeg" alt="Ladislava Kořínková" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-7-korinkova.jpeg" alt="Ladislava Kořínková" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">7.</span>
         </div>
         <div class="kandidat__telo">
@@ -663,7 +679,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-8-votockova.jpeg" alt="Marie Votočková" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-8-votockova.jpeg" alt="Marie Votočková" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">8.</span>
         </div>
         <div class="kandidat__telo">
@@ -674,7 +690,7 @@
 
       <article class="kandidat nabihat">
         <div class="kandidat__obrazek">
-          <img src="img/kandidati/snk-9-celer.jpeg" alt="Martin Celer" loading="lazy" width="297" height="297">
+          <img src="img/kandidati/snk-9-celer.jpeg" alt="Martin Celer" decoding="async" width="297" height="297">
           <span class="kandidat__poradi">9.</span>
         </div>
         <div class="kandidat__telo">
@@ -881,6 +897,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=2026-07-20-2215"></script>
+<script src="js/main.js?v=2026-07-20-2248"></script>
 </body>
 </html>

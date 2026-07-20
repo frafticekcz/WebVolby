@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <!-- Číslo za ?v= po každé úpravě CSS nebo JS zvyšte — viz komentář v index.html -->
-<link rel="stylesheet" href="css/style.css?v=2026-07-20-2215">
+<link rel="stylesheet" href="css/style.css?v=2026-07-20-2248">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
 <!-- Náběhové animace se zapnou jen tam, kde je JavaScript k dispozici -->
@@ -49,10 +49,8 @@
 
     <nav class="menu" id="menu" aria-label="Hlavní navigace">
       <a href="index.html#vysledky">Co jsme udělali</a>
-      <a href="program.html" class="je-aktivni" aria-current="page">Program</a>
-      <a href="mapa.html">Mapa projektů</a>
-      <a href="kandidati.html">Kandidáti</a>
-      <a href="jak-volit.html">Jak volit</a>
+      <a href="index.html#program">Program</a>
+      <a href="index.html#kandidati">Kandidáti</a>
       <a href="index.html#kontakt">Kontakt</a>
       <a class="tlacitko tlacitko--cervene menu__cta" href="jak-volit.html">Jdu volit</a>
     </nav>
@@ -200,19 +198,19 @@
           <!-- ==================================================================
                VZOR PRO DOPLNĚNÍ DETAILU BODU
 
-               Každý bod plánu se dá rozkliknout. Obsah <div class="detail__obsah">
-               nahraďte skutečnými informacemi podle tohoto vzoru — odstavce
-               i seznam parametrů jsou volitelné, použijte jen to, co dává smysl:
+               Detail prvního bodu níže je vyplněný jako UKÁZKA, jak může vypadat
+               podrobný popis. Podle něj doplňte ostatní body. Stavební kameny:
 
-               <div class="detail__obsah">
-                 <p>Popis toho, jak se záměr zrealizuje.</p>
-                 <dl class="parametry">
-                   <div><dt>Postup</dt><dd>Ve dvou etapách, začínáme úsekem…</dd></div>
-                   <div><dt>Odhadované náklady</dt><dd>4,5 mil. Kč</dd></div>
-                   <div><dt>Zdroj financování</dt><dd>Dotace SFDI, spoluúčast městyse 15 %</dd></div>
-                   <div><dt>Předpokládaný termín</dt><dd>2027 – 2028</dd></div>
-                 </dl>
-               </div>
+               1) <p class="detail__ukazka">…</p>   — jen upozornění „ukázkový
+                  text", ve skutečném obsahu ho smažte.
+
+               2) <dl class="detail__meta"> … </dl> — parametry v boxících nahoře.
+                  Každá položka je <div><dt>Název</dt><dd>Hodnota</dd></div>.
+                  Použijte jen ty, které dávají smysl (kde, náklady, termín…).
+
+               3) <div class="detail__sekce"><h4>Nadpis</h4><p>text…</p></div>
+                  — textová část s barevným nadpisem. Sekcí může být víc a mohou
+                  obsahovat odstavce <p> i odrážky <ul><li>…</li></ul>.
 
                Třída "chybi" označuje zatím nedoplněný text — až budou podklady
                hotové, neměla by zůstat nikde na stránce.
@@ -226,7 +224,53 @@
                   <span class="pozn">Již ve volebním období 2018 – 2022 získáno stavební povolení</span>
                 </summary>
                 <div class="detail__obsah">
-                  <p class="chybi">Podrobnosti k tomuto bodu zatím připravujeme.</p>
+                  <p class="detail__ukazka">
+                    Ukázkový text — konkrétní čísla, trasa i termíny jsou smyšlené
+                    a slouží jen pro představu, jak může podrobný popis vypadat.
+                  </p>
+
+                  <dl class="detail__meta">
+                    <div><dt>Kde</dt><dd>Těleso bývalé vlečky, úsek nádraží – Bezenská</dd></div>
+                    <div><dt>Délka</dt><dd>1,8 km</dd></div>
+                    <div><dt>Odhad nákladů</dt><dd>6,4 mil. Kč</dd></div>
+                    <div><dt>Termín</dt><dd>2027 – 2028</dd></div>
+                  </dl>
+
+                  <div class="detail__sekce">
+                    <h4>Jak to zrealizujeme</h4>
+                    <p>
+                      Stezku vybudujeme na náspu bývalé cukrovarnické vlečky, který
+                      je v majetku městyse a nevyžaduje výkupy pozemků. Stavební
+                      povolení máme z minulého volebního období, navazujeme tedy
+                      rovnou přípravou výběrového řízení na zhotovitele.
+                    </p>
+                    <p>Práce rozdělíme do dvou etap, aby stezka sloužila co nejdřív:</p>
+                    <ul>
+                      <li>1. etapa: úsek od nádraží k ulici Bezenská (asfalt, šířka 3 m)</li>
+                      <li>2. etapa: prodloužení k hranici katastru a doplnění mobiliáře</li>
+                    </ul>
+                  </div>
+
+                  <div class="detail__sekce">
+                    <h4>Jak to bude fungovat</h4>
+                    <p>
+                      Vznikne bezpečné spojení mimo hlavní silnici pro pěší,
+                      cyklisty i rodiče s kočárky. Stezku osvětlíme v úseku
+                      u zástavby a doplníme lavičky a stojany na kola. Údržbu
+                      (sekání, zimní schůdnost) zajistí městys v rámci běžné
+                      péče o veřejná prostranství.
+                    </p>
+                  </div>
+
+                  <div class="detail__sekce">
+                    <h4>Financování</h4>
+                    <p>
+                      Většinu nákladů chceme pokrýt dotací ze Státního fondu
+                      dopravní infrastruktury, spoluúčast městyse odhadujeme
+                      okolo 15 %. Bez získané dotace bychom realizaci odložili,
+                      abychom nezatížili rozpočet.
+                    </p>
+                  </div>
                 </div>
               </details>
             </li>
@@ -1122,6 +1166,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=2026-07-20-2215"></script>
+<script src="js/main.js?v=2026-07-20-2248"></script>
 </body>
 </html>
