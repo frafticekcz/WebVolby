@@ -8,6 +8,54 @@
 
   var omezitPohyb = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Registrace posluchače scrollu omezeného na jedno vykreslení za snímek.
+     Všechny scrollové výpočty na stránce sdílejí tento jeden posluchač.  */
+  var naScrollFunkce = [];
+  var scrollCeka = false;
+
+  function naScroll(funkce) {
+    naScrollFunkce.push(funkce);
+  }
+
+  window.addEventListener("scroll", function () {
+    if (scrollCeka) return;
+    scrollCeka = true;
+    window.requestAnimationFrame(function () {
+      naScrollFunkce.forEach(function (f) { f(); });
+      scrollCeka = false;
+    });
+  }, { passive: true });
+
+  /* Zavolá `akce(prvek)` ve chvíli, kdy se prvek dostane do okna.
+     Kromě scrollu se stav ověřuje i v pravidelném intervalu — scrollová
+     událost se totiž nemusí spustit u programového posunu stránky
+     (skok na kotvu, obnovená pozice po návratu zpět). Interval se sám
+     ukončí, jakmile jsou všechny prvky odbavené.                        */
+  function priVstupuDoOkna(prvky, rezerva, akce) {
+    var cekajici = prvky.slice();
+    if (!cekajici.length) return;
+
+    function prohlednout() {
+      var vyska = window.innerHeight;
+
+      cekajici = cekajici.filter(function (p) {
+        var r = p.getBoundingClientRect();
+        if (r.top < vyska - rezerva && r.bottom > 0) {
+          akce(p);
+          return false;
+        }
+        return true;
+      });
+
+      if (!cekajici.length) clearInterval(hlidac);
+    }
+
+    var hlidac = setInterval(prohlednout, 250);
+    naScroll(prohlednout);
+    window.addEventListener("resize", prohlednout, { passive: true });
+    prohlednout();
+  }
+
   /* ------------------------------------------------------ Mobilní menu */
   (function menu() {
     var tlacitko = document.getElementById("hamburger");
@@ -50,8 +98,6 @@
     var ukazatel = document.getElementById("ukazatel");
     if (!hlavicka) return;
 
-    var ceka = false;
-
     function prekreslit() {
       var y = window.scrollY || document.documentElement.scrollTop;
       hlavicka.classList.toggle("je-odscrollovano", y > 8);
@@ -61,16 +107,9 @@
         var podil = celkem > 0 ? (y / celkem) * 100 : 0;
         ukazatel.style.width = Math.min(100, Math.max(0, podil)) + "%";
       }
-      ceka = false;
     }
 
-    window.addEventListener("scroll", function () {
-      if (!ceka) {
-        ceka = true;
-        window.requestAnimationFrame(prekreslit);
-      }
-    }, { passive: true });
-
+    naScroll(prekreslit);
     prekreslit();
   })();
 
@@ -79,44 +118,47 @@
     var odkazy = Array.prototype.slice.call(
       document.querySelectorAll('.menu a[href^="#"]')
     );
-    if (!odkazy.length || !("IntersectionObserver" in window)) return;
+    if (!odkazy.length) return;
 
     var sekce = odkazy
-      .map(function (a) { return document.querySelector(a.getAttribute("href")); })
+      .map(function (a) {
+        var cil = document.querySelector(a.getAttribute("href"));
+        return cil ? { odkaz: a, prvek: cil } : null;
+      })
       .filter(Boolean);
     if (!sekce.length) return;
 
-    var pozorovatel = new IntersectionObserver(function (zaznamy) {
-      zaznamy.forEach(function (z) {
-        if (!z.isIntersecting) return;
-        odkazy.forEach(function (a) {
-          a.classList.toggle("je-aktivni", a.getAttribute("href") === "#" + z.target.id);
-        });
-      });
-    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    // Za aktivní bereme poslední sekci, jejíž začátek už je nad středem okna
+    function prepocitat() {
+      var stred = window.scrollY + window.innerHeight * .4;
+      var aktivni = null;
 
-    sekce.forEach(function (s) { pozorovatel.observe(s); });
+      sekce.forEach(function (s) {
+        if (s.prvek.offsetTop <= stred) aktivni = s;
+      });
+
+      sekce.forEach(function (s) {
+        s.odkaz.classList.toggle("je-aktivni", s === aktivni);
+      });
+    }
+
+    naScroll(prepocitat);
+    prepocitat();
   })();
 
-  /* -------------------------------------- Náběh prvků při scrollování */
+  /* ------------------------------------- Náběh prvků při scrollování */
   (function nabihani() {
     var prvky = Array.prototype.slice.call(document.querySelectorAll(".nabihat"));
     if (!prvky.length) return;
 
-    if (omezitPohyb || !("IntersectionObserver" in window)) {
-      prvky.forEach(function (p) { p.classList.add("je-videt"); });
+    function odhalit(p) { p.classList.add("je-videt"); }
+
+    if (omezitPohyb) {
+      prvky.forEach(odhalit);
       return;
     }
 
-    var pozorovatel = new IntersectionObserver(function (zaznamy, self) {
-      zaznamy.forEach(function (z) {
-        if (!z.isIntersecting) return;
-        z.target.classList.add("je-videt");
-        self.unobserve(z.target);
-      });
-    }, { rootMargin: "0px 0px -60px 0px", threshold: .08 });
-
-    prvky.forEach(function (p) { pozorovatel.observe(p); });
+    priVstupuDoOkna(prvky, 60, odhalit);
   })();
 
   /* -------------------------------------------------- Odpočet do voleb */
@@ -204,20 +246,7 @@
       requestAnimationFrame(krok);
     }
 
-    if (!("IntersectionObserver" in window)) {
-      prvky.forEach(spustit);
-      return;
-    }
-
-    var pozorovatel = new IntersectionObserver(function (zaznamy, self) {
-      zaznamy.forEach(function (z) {
-        if (!z.isIntersecting) return;
-        spustit(z.target);
-        self.unobserve(z.target);
-      });
-    }, { threshold: .4 });
-
-    prvky.forEach(function (p) { pozorovatel.observe(p); });
+    priVstupuDoOkna(prvky, 40, spustit);
   })();
 
   /* -------------------------------------- Přepínač kandidátních listin */

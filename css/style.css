@@ -1180,12 +1180,14 @@ p:last-child { margin-bottom: 0; }
 /* ==========================================================================
    Animace při scrollu
    ========================================================================== */
-.nabihat {
+/* Skrývá se jen tehdy, když běží JavaScript, který obsah zase odhalí.
+   Bez JS (nebo když skript selže) je stránka od začátku plně čitelná. */
+.js .nabihat {
   opacity: 0;
   transform: translateY(26px);
   transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .3, 1);
 }
-.nabihat.je-videt { opacity: 1; transform: none; }
+.js .nabihat.je-videt { opacity: 1; transform: none; }
 
 /* ==========================================================================
    Responzivita
@@ -1266,7 +1268,7 @@ p:last-child { margin-bottom: 0; }
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
-  .nabihat { opacity: 1; transform: none; }
+  .js .nabihat { opacity: 1; transform: none; }
 }
 
 /* ------------------------------------------------------------------- Tisk */
@@ -1274,6 +1276,6 @@ p:last-child { margin-bottom: 0; }
   .hlavicka, .hamburger, .odpocet, .hero__tlacitka, .prepinac { display: none !important; }
   body { font-size: 11pt; }
   .sekce { padding: 20px 0; }
-  .nabihat { opacity: 1 !important; transform: none !important; }
+  .js .nabihat { opacity: 1 !important; transform: none !important; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .85em; color: #555; }
 }
