@@ -1872,6 +1872,52 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.45;
 }
 .profil__text p { font-size: .98rem; color: #3A4256; }
+.profil__text p + p { margin-top: .9em; }
+
+/* Mezinadpis uvnitř delšího představení */
+.profil__text h4 {
+  font-family: var(--font-nadpis);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--modra);
+  margin: 1.4em 0 .5em;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.profil__text h4::before {
+  content: "";
+  width: 5px;
+  height: 16px;
+  border-radius: 3px;
+  background: var(--cervena);
+  flex-shrink: 0;
+}
+
+/* Odrážky s prioritami kandidáta */
+.profil__text ul {
+  list-style: none;
+  margin: .7em 0 0;
+  padding: 0;
+}
+.profil__text li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  font-size: .97rem;
+  color: #3A4256;
+  line-height: 1.55;
+}
+.profil__text li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cervena);
+}
 
 /* ==========================================================================
    Kontakt
