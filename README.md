@@ -18,6 +18,10 @@ git push
 
 Do zhruba minuty po `push` je nová verze na serveru.
 
+> Chystáte-li se web přesunout na vlastní server s nginx, kompletní postup
+> i hotovou konfiguraci najdete ve složce [`nasazeni/`](nasazeni/README.md).
+> Tam odpadá i celé níže popsané verzování `?v=`.
+
 ## Cachování — proč a jak je to vyřešené
 
 Prohlížeče si soubory ukládají do mezipaměti, aby se web načítal rychleji.

@@ -1,2 +1,5 @@
 dev-server.py
 verze.py
+nasazeni/nginx-spolu-chotetov.conf
+nasazeni/nginx-spolu-chotetov-hrivno.conf
+nasazeni/README.md
