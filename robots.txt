@@ -1,0 +1,10 @@
+# Pravidla pro vyhledávače — platí pro ostrou verzi webu.
+#
+# Dokud běží dočasná stránka „Připravujeme", tenhle soubor se neuplatní:
+# nginx servíruje složku pripravujeme/, která má vlastní robots.txt
+# zakazující indexaci úplně.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://spolu-chotetov-hrivno.cz/sitemap.xml

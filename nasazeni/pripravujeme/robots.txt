@@ -1,0 +1,6 @@
+# Dočasná stránka — vyhledávače sem nemají chodit vůbec.
+# Doplňuje značku noindex v index.html; samotná meta značka nestačí,
+# protože robota nejdřív musí něco odradit od stažení stránky.
+
+User-agent: *
+Disallow: /

@@ -3,198 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ODS &amp; SPOLU pro Chotětov a Hřivno</title>
-<meta name="description" content="Připravujeme pro vás informace o volebním programu a kandidátech pro komunální volby 9. a 10. října 2026.">
-<meta name="theme-color" content="#002A7D">
+<title>Připravujeme</title>
 
-<!-- Dokud web není hotový, ať ho vyhledávače neindexují. -->
-<meta name="robots" content="noindex">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="ODS &amp; SPOLU pro Chotětov a Hřivno">
-<meta property="og:description" content="Připravujeme pro vás informace o programu a kandidátech.">
-<meta property="og:locale" content="cs_CZ">
+<!-- Dočasná stránka je záměrně neutrální: neuvádí název subjektu, obec, obsah
+     chystaného webu ani žádné datum. Nesmí prozradit nic, co by nemělo být
+     venku dřív než ostrá verze. Proto tu nejsou ani firemní barvy a znak.
+     Zároveň ji nechceme mít v indexu vyhledávačů. -->
+<meta name="robots" content="noindex, nofollow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- Stránka je záměrně samostatná: nemá žádné vazby na css/ ani js/ ostrého
-     webu, aby šla nasadit úplně odděleně. Styly jsou proto přímo tady. -->
+<!-- Neutrální favicon, aby karta prohlížeče nepůsobila rozbitě -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='34' fill='none' stroke='%239AA1AC' stroke-width='9'/></svg>">
+
 <style>
-  :root {
-    --modra: #002A7D;
-    --modra-tmava: #001C57;
-    --cervena: #CF0000;
-    --seda-text: #5A6070;
-    --seda-svetla: #F2F2F2;
-  }
-
   * { box-sizing: border-box; }
 
   body {
     margin: 0;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 40px 20px 0;
+    padding: 32px 20px;
     font-family: "Lato", "Segoe UI", system-ui, sans-serif;
-    color: #1B2233;
-    background: radial-gradient(ellipse 120% 80% at 50% 0%, #fff 0%, var(--seda-svetla) 100%);
-    overflow-x: hidden;
+    background: #F4F5F7;
+    color: #3C424D;
   }
 
-  .obsah { max-width: 760px; position: relative; z-index: 2; }
-
-  .claim {
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-size: clamp(1.05rem, 3vw, 1.6rem);
-    color: var(--cervena);
-    line-height: 1.35;
-    margin: 0 0 18px;
+  .obsah {
+    text-align: center;
+    max-width: 420px;
   }
 
-  h1 { margin: 0 0 28px; }
-
-  .ods {
-    display: block;
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    color: var(--modra);
-    line-height: 1;
-    letter-spacing: -.02em;
-    margin-bottom: .1em;
-  }
-  .spolu {
-    display: block;
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-size: clamp(3.8rem, 15vw, 9rem);
-    color: var(--modra);
-    line-height: .9;
-    letter-spacing: -.035em;
-    text-shadow: 0 5px 26px rgba(0, 42, 125, .22);
-  }
-  .pro {
-    display: block;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.1rem, 4vw, 2.1rem);
-    color: var(--modra);
-    text-transform: uppercase;
-    line-height: 1.2;
-    letter-spacing: -.01em;
-    margin-top: .15em;
-  }
-
-  .zprava {
-    background: #fff;
-    border: 1px solid #DDE1E8;
-    border-radius: 22px;
-    box-shadow: 0 8px 28px rgba(0, 42, 125, .10);
-    padding: 30px 32px;
+  .znak {
+    width: 46px;
+    height: 46px;
     margin: 0 auto 26px;
-    max-width: 560px;
+    border-radius: 50%;
+    border: 3px solid #C9CFD8;
   }
-  .zprava h2 {
-    font-family: "Poppins", sans-serif;
+
+  h1 {
+    margin: 0 0 14px;
+    font-size: 1.5rem;
     font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--modra);
-    margin: 0 0 10px;
+    letter-spacing: .01em;
+    color: #2B313B;
   }
-  .zprava p {
+
+  p {
     margin: 0;
     font-size: 1.02rem;
     line-height: 1.6;
-    color: #3A4256;
-  }
-
-  .termin {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.2rem, 4vw, 1.7rem);
-    color: var(--modra);
-    margin: 0 0 8px;
-  }
-  .termin span { color: var(--cervena); }
-
-  .popisek {
-    font-size: .95rem;
-    color: var(--seda-text);
-    margin: 0;
-  }
-
-  /* Vlnovky — podpisový prvek tiskovin */
-  .vlny {
-    position: fixed;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    z-index: 1;
-    pointer-events: none;
-    display: block;
-  }
-
-  /* Spodní odsazení drží text nad vlnovkami — na barevném pruhu
-     by byl šedý text nečitelný. */
-  .paticka {
-    position: relative;
-    z-index: 2;
-    margin-top: auto;
-    padding: 40px 0 165px;
-    font-size: .86rem;
-    color: var(--seda-text);
-  }
-
-  @media (max-height: 620px) {
-    .vlny { position: absolute; }
+    color: #6B7280;
   }
 </style>
 </head>
 
 <body>
-
   <div class="obsah">
-    <p class="claim">Vrátíme obci slušnost,<br>respekt a odpovědnost</p>
-
-    <h1>
-      <span class="ods">ODS &amp;</span>
-      <span class="spolu">SPOLU</span>
-      <span class="pro">pro Chotětov a Hřivno</span>
-    </h1>
-
-    <div class="zprava">
-      <h2>Připravujeme pro vás informace</h2>
-      <p>
-        Na těchto stránkách brzy najdete náš volební program, představení
-        kandidátů obou listin i pozvánky na setkání s občany.
-      </p>
-    </div>
-
-    <p class="termin">Volby <span>9. a 10. října 2026</span></p>
-    <p class="popisek">do zastupitelstva městyse Chotětov</p>
+    <div class="znak" aria-hidden="true"></div>
+    <h1>Připravujeme</h1>
+    <p>Na těchto stránkách se pracuje. Děkujeme za trpělivost.</p>
   </div>
-
-  <p class="paticka">© 2026 ODS &amp; SPOLU pro Chotětov a Hřivno</p>
-
-  <svg class="vlny" viewBox="0 0 1440 190" preserveAspectRatio="none"
-       height="150" aria-hidden="true" focusable="false">
-    <path d="M0,120 C240,50 420,158 720,110 C1020,62 1200,150 1440,88 L1440,190 L0,190 Z"
-          fill="#E9EBEF"/>
-    <path d="M0,146 C260,86 430,178 720,134 C1010,90 1210,168 1440,116 L1440,190 L0,190 Z"
-          fill="#3D5FA8" opacity=".9"/>
-    <path d="M0,168 C260,116 440,192 720,156 C1000,120 1220,186 1440,146 L1440,190 L0,190 Z"
-          fill="#CF0000" opacity=".85"/>
-    <path d="M0,182 C280,146 460,200 720,176 C980,152 1230,196 1440,168 L1440,190 L0,190 Z"
-          fill="#FFFFFF"/>
-  </svg>
-
 </body>
 </html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mapa webu pro vyhledávače.
+
+  Po každé větší obsahové změně upravte u dané stránky datum v <lastmod>
+  (formát RRRR-MM-DD). Není to povinné, ale vyhledávačům to napoví,
+  že se stránka změnila.
+
+  Adresy odpovídají odkazům uvnitř webu, tedy včetně přípony .html.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://spolu-chotetov-hrivno.cz/</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://spolu-chotetov-hrivno.cz/program.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://spolu-chotetov-hrivno.cz/kandidati.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://spolu-chotetov-hrivno.cz/jak-volit.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spolu-chotetov-hrivno.cz/mapa.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
