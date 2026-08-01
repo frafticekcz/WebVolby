@@ -18,7 +18,7 @@
 <!-- Značka ?v=... za odkazy na CSS a JS zajišťuje, že po úpravě uvidí
      návštěvníci novou verzi místo staré z mezipaměti. Nepřepisujte ji ručně —
      před nahráním webu spusťte `python verze.py`, viz README.md. -->
-<link rel="stylesheet" href="css/style.css?v=2026-07-27-2041">
+<link rel="stylesheet" href="css/style.css?v=2026-08-01-1319">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23002A7D'/><path d='M26 52l16 17 32-38' stroke='%23fff' stroke-width='11' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
 <!-- Náběhové animace se zapnou jen tam, kde je JavaScript k dispozici -->
@@ -100,9 +100,9 @@
     <path d="M0,120 C240,50 420,158 720,110 C1020,62 1200,150 1440,88 L1440,190 L0,190 Z"
           fill="#E9EBEF"/>
     <path d="M0,146 C260,86 430,178 720,134 C1010,90 1210,168 1440,116 L1440,190 L0,190 Z"
-          fill="#3D5FA8" opacity=".9"/>
-    <path d="M0,168 C260,116 440,192 720,156 C1000,120 1220,186 1440,146 L1440,190 L0,190 Z"
           fill="#CF0000" opacity=".85"/>
+    <path d="M0,168 C260,116 440,192 720,156 C1000,120 1220,186 1440,146 L1440,190 L0,190 Z"
+          fill="#3D5FA8" opacity=".9"/>
     <path d="M0,182 C280,146 460,200 720,176 C980,152 1230,196 1440,168 L1440,190 L0,190 Z"
           fill="#FFFFFF"/>
   </svg>
@@ -158,21 +158,22 @@
       </div>
 
       <div class="cislo-karta nabihat">
-        <div class="cislo-karta__hodnota" data-cil="88">0</div>
-        <div class="cislo-karta__nazev">míst v mateřských školách</div>
-        <p class="cislo-karta__popis">MŠ Chotětov 63 dětí a nové pracoviště MŠ Hřivno pro 25 dětí.</p>
+        <div class="cislo-karta__hodnota" data-cil="42">0</div>
+        <div class="cislo-karta__nazev">nových míst v mateřských školách</div>
+        <p class="cislo-karta__popis">Dalších 37 míst je ve výstavbě. Současná kapacita je 125 dětí.</p>
       </div>
 
       <div class="cislo-karta nabihat">
         <div class="cislo-karta__hodnota" data-cil="44.4">0</div>
         <div class="cislo-karta__nazev">milionů Kč investováno</div>
-        <p class="cislo-karta__popis">V období 2018–2022, z toho 16,2 mil. Kč získáno z dotací.</p>
+        <p class="cislo-karta__popis">V období 2018–2022, více než třetina získána z dotací.</p>
       </div>
 
       <div class="cislo-karta nabihat">
-        <div class="cislo-karta__hodnota" data-cil="18">0</div>
-        <div class="cislo-karta__nazev">kandidátů na dvou listinách</div>
-        <p class="cislo-karta__popis">Zkušené tváře i lidé, kteří do obecních věcí vstupují nově.</p>
+        <!-- Číslo (počet km) doplníme, až bude k dispozici. -->
+        <div class="cislo-karta__hodnota"><span class="chybi">— </span><span class="jednotka">km</span></div>
+        <div class="cislo-karta__nazev">obnovených polních cest a alejí</div>
+        <p class="cislo-karta__popis">I. etapa hotová, II. etapa má zpracovanou projektovou dokumentaci.</p>
       </div>
     </div>
 
@@ -267,7 +268,7 @@
 
     <div class="hlavicka-sekce nabihat">
       <span class="stitek">Plán 2026 – 2030</span>
-      <h2>Osm oblastí, na které se zaměříme</h2>
+      <h2>Osm oblastí, na které se zaměříme v obou obcích</h2>
       <div class="podtrzeni"></div>
       <p>
         U každé oblasti navazujeme na to, co už je hotové. Kompletní přehled včetně
@@ -412,8 +413,7 @@
         </a>
       </article>
 
-      <article class="oblast oblast--sirka nabihat">
-        <div class="oblast__cislo">9</div>
+      <article class="oblast oblast--sirka oblast--bezcisla nabihat">
         <h3 class="oblast__nazev">Hřivno</h3>
         <ul class="oblast__seznam oblast__seznam--dva">
           <li>Hřivenský plácek — nové víceúčelové a dětské hřiště se zázemím</li>
@@ -801,7 +801,6 @@
          Nahraďte texty s třídou "chybi" skutečnými údaji a u odkazů
          opravte i atribut href:
            e-mail   → href="mailto:vas@email.cz"
-           telefon  → href="tel:+420123456789"
            Facebook → href="https://www.facebook.com/vase-stranka"
 
          Pokud některý kanál nechcete používat, celou kartu smažte.
@@ -819,18 +818,6 @@
         <h3>Napište nám</h3>
         <p>Odpovíme obvykle do dvou dnů.</p>
         <a href="#" class="chybi">Doplníme e-mailovou adresu</a>
-      </div>
-
-      <div class="kontakt-karta nabihat">
-        <div class="kontakt-karta__ikona" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 4h3.5l1.8 4.4-2.2 1.6a11.5 11.5 0 005.9 5.9l1.6-2.2 4.4 1.8V19a1.6 1.6 0 01-1.8 1.6C9.9 19.8 4.2 14.1 3.4 5.8A1.6 1.6 0 015 4z"
-                  stroke="#002A7D" stroke-width="2" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Zavolejte</h3>
-        <p>Raději si promluvíte? Ozvěte se.</p>
-        <a href="#" class="chybi">Doplníme telefonní číslo</a>
       </div>
 
       <div class="kontakt-karta nabihat">
@@ -900,6 +887,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=2026-07-27-2041"></script>
+<script src="js/main.js?v=2026-08-01-1319"></script>
 </body>
 </html>

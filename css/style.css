@@ -728,6 +728,16 @@ p:last-child { margin-bottom: 0; }
 .oblast--sirka .oblast__cislo { background: var(--modra-svetla); color: #fff; }
 .oblast--sirka:hover .oblast__cislo { background: var(--modra); }
 
+/* Karta bez čísla (Hřivno) — obsah zabírá celou šířku, žádný sloupec pro číslo */
+.oblast--bezcisla {
+  grid-template-columns: 1fr;
+  border-top: 4px solid var(--modra-svetla);
+}
+.oblast--bezcisla .oblast__nazev,
+.oblast--bezcisla .oblast__seznam,
+.oblast--bezcisla .oblast__odkaz { grid-column: 1; }
+.oblast--bezcisla .oblast__nazev { margin-top: 0; }
+
 @media (min-width: 561px) {
   .oblast__seznam--dva {
     columns: 2;
@@ -1936,9 +1946,10 @@ p:last-child { margin-bottom: 0; }
    ========================================================================== */
 .kontakty {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
-  margin-bottom: 34px;
+  max-width: 720px;
+  margin: 0 auto 34px;
 }
 .kontakt-karta {
   background: #fff;
